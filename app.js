@@ -1,4 +1,4 @@
-
+var Repository = require('auto-committer-backend');
 
 function createRepository(){
 	//alert("createRepository");
@@ -30,6 +30,7 @@ var repository = new Repository('/home/daniel/foobar');
 repository.startWatch();
 setInterval(function() {
   repository.diffStats(function (stats) {
+    console.log(stats);
     if (stats.insertionsNumber > 0 || stats.deletionsNumber > 0) {
       repository.commit();
       repository.push();
