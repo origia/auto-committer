@@ -16,6 +16,7 @@ function showCreateWindow(){
 	$(function(){
 		$("#modal").show("fast");
 		$("nav .create").css('background', 'url(images/common/nav-selected.png) no-repeat');
+		$(".create-window input.repository").focus();
 	})
 }
 
