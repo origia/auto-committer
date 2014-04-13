@@ -160,9 +160,19 @@ header{
 				width:77%;
 				height: 22px;
 				border-radius: 3px;
-				float: right;
+				float: left;
 				border:none;
 				box-shadow: 0 0 2px #444;
+				&.repository {
+					width: 50%;
+					margin-left: 23px;
+				}
+				&.bookmark {
+					width: 50%;
+				}
+				&.path {
+					margin-left: 23px;
+				}
 			}
 		}
 		.buttons {

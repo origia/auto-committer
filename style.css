@@ -141,9 +141,16 @@ header {
         width: 77%;
         height: 22px;
         border-radius: 3px;
-        float: right;
+        float: left;
         border: none;
         box-shadow: 0 0 2px #444; }
+        #modal .create-window li input.repository {
+          width: 50%;
+          margin-left: 23px; }
+        #modal .create-window li input.bookmark {
+          width: 50%; }
+        #modal .create-window li input.path {
+          margin-left: 23px; }
     #modal .create-window .buttons input {
       float: right;
       margin-right: 10px;
