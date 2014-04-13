@@ -1,58 +1,60 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AutoCommitter</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+	<meta charset="UTF-8">
+	<title>AutoCommitter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
 </head>
-<body>
- <header>
-	<h1>ブックマーク</h1>
-	<nav>
-		<ul>
-			<li onclick="createRepository()"><div>
-				<img src="images/menu/nav-create.png">
-				<p>リポジトリを作成</p>
-			</div></li>
-			<li onclick="cloneRepository()"><div>
+<body class="menu">
+	<header>
+		<h1>ブックマーク</h1>
+		<nav>
+			<div class="create" onclick="createRepository()">
+					<img src="images/menu/nav-create.png">
+					<p>リポジトリを作成</p>
+			</div>
+			<div class="clone" onclick="cloneRepository()">
 				<img src="images/menu/nav-clone.png"/>
 				<p>リポジトリをクローン</p>
-			</div></li>
-		</ul>
-	</nav>
- </header>
- <div id="menu">
-	<ul>
-		<li>
-			<div class="main-data">
-				<img src="images/menu/git-blue.png">
+			</div>
+		</nav>
+	</header>
+	<div class="main">
+		<a href="#">
+			<div class="title">
 				<h2>conductor-promotion</h2>
 			</div>
-			<div class="meta-data">
-				<p>Users/hajime/GitHub/conductor-promotion</p>
-				<p>
-					<img src="images/menu/flower-min.png">
-					進捗
-					<span>80%</span>
-				</p>
-			</div>
-		</li>
-		<li>
-			<div class="main-data">
-				<img src="images/menu/git-blue.png">
-				<h2>marrin-Android</h2>
-			</div>
-			<div class="meta-data">
-				<p>Users/hajime/GitHub/conductor-promotion</p>
-				<p>
-					<img src="images/menu/flower-min.png">
-					進捗
-					<span>80%</span>
-				</p>
-			</div>
-		</li>
- </div>
+
+		</a>
+		<ul>
+			<li>
+				<div class="main-data">
+				</div>
+				<div class="meta-data">
+					<p>Users/hajime/GitHub/conductor-promotion</p>
+					<p>
+						<img src="images/menu/flower-min.png">
+						進捗
+						<span>80%</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div class="main-data">
+					<img src="images/menu/git-blue.png">
+					<h2>marrin-Android</h2>
+				</div>
+				<div class="meta-data">
+					<p>Users/hajime/GitHub/conductor-promotion</p>
+					<p>
+						<img src="images/menu/flower-min.png">
+						進捗
+						<span>80%</span>
+					</p>
+				</div>
+			</li>
+	</div>
 </body>
 </html>

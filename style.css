@@ -1,101 +1,125 @@
-html, body, div, p, img, header, footer, nav, section, article, aside, figure, h1, h2, h3, h4, ul, li{
-	margin:0;
-	padding:0;
-	text-decoration:none;
-	list-style:none;
-	border:none;
-	box-shadow:none;
-}
+@charset "UTF-8";
+html, body, div, p, img, header, footer, nav, section, article, aside, figure, h1, h2, h3, h4, ul, li {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  box-shadow: none; }
 
-header{
-	width:100%;
-	background-color:#c0c0c0;
-	text-align:center;
-}
+a {
+  text-decoration: none; }
 
-header h1{
-	display:none;
-}
+.center {
+  text-align: center; }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 500px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  background: #F0F2F6; }
+
+h1 {
+  font-size: 13px;
+  font-weight: normal;
+  padding-top: 2px;
+  color: #444; }
+
+header {
+  width: 100%;
+  height: 83px;
+  background: url(images/common/bg-header.png);
+  text-align: center; }
 
 nav {
-	text-align:center;
-	width:500px;
-	margin-left:auto;
-	margin-right:auto;
-	overflow:hidden;
-	}
-nav ul{
-	width:302px;
-	margin-left:auto;
-	margin-right:auto;
-	overflow:hidden;
-}
-nav li {
-	list-style-type:none;
-	display:inline;
-	margin-left:15px;
-	margin-right:15px;
-	float:left;
-}
-nav h1 {
-	display:none;
-}
+  margin: 0 auto;
+  width: 422px;
+  text-align: center;
+  overflow: hidden; }
+  nav img {
+    padding-top: 2px; }
+  nav p {
+    font-size: 12px;
+    color: #444; }
+  nav .create {
+    width: 211px;
+    height: 59px;
+    float: left;
+    background: url(images/common/nav-selected.png) no-repeat; }
+  nav .clone {
+    width: 211px;
+    height: 59px;
+    float: left; }
 
-div li{
-	overflow:hidden;
-}
-div.main-data{
-	width:70%;
-	float:left;
-}
-div.main-data h2{
-	line-height:44px;
-}
-div.main-data img{
-	padding:5px;
-	float:left;
-}
-div.meta-data{
-	text-align:right;
-	width:30%;
-	float:left;
-}
+.main {
+  padding: 10px;
+  width: 100%;
+  overflow: hidden; }
+  .main .title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+    padding-left: 10px;
+    width: 70%; }
+  .main h2 {
+    padding-top: 5px;
+    padding-left: 40px;
+    height: 34px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+    background: url(images/menu/git-blue.png) no-repeat; }
 
-div.meta-data{
-	text-align:right;
-	width:30%;
-	float:left;
-}
+div.main-data {
+  width: 70%;
+  float: left; }
 
-div p{
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
+div.main-data h2 {
+  line-height: 44px; }
+
+div.main-data img {
+  padding: 5px;
+  float: left; }
+
+div.meta-data {
+  text-align: right;
+  width: 30%;
+  float: left; }
+
+div.meta-data {
+  text-align: right;
+  width: 30%;
+  float: left; }
+
+div p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
 #create-window {
-	top:0;
-	left:10%;
-	width:80%;
-	padding:20px;
-	background-color:#d3d3d3;
-	position:absolute;
-}
-#create-window li{
-	padding:5px;
-}
-#create-window li input{
-	width:70%;
-	float:right;
-}
-#create-window p{
-	text-align:right;
-}
-#create-window p input{
-	width:100px;
-	margin-left:10px;
-}
+  top: 0;
+  left: 10%;
+  width: 80%;
+  padding: 20px;
+  background-color: #d3d3d3;
+  position: absolute; }
 
-#menu{
-	position:relative;
-}
+#create-window li {
+  padding: 5px; }
+
+#create-window li input {
+  width: 70%;
+  float: right; }
+
+#create-window p {
+  text-align: right; }
+
+#create-window p input {
+  width: 100px;
+  margin-left: 10px; }
+
+#menu {
+  position: relative; }
