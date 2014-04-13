@@ -11,12 +11,12 @@ function cloneRepository(){
 
 function showCreateWindow(){
 	var cWindow = $(
-		'<div class="create-window"><ul>'
+		'<div class="filter"></div><div class="create-window"><ul>'
 		+	'<li>リポジトリ名：<input type="text" name="repository"></li>'
 		+	'<li>ブックマーク名：<input type="text" name="bookmark"></li>'
 		+	'<li>保存先のパス：<input type="text" name="path"></li>'
 		+	'</ul>'
-		+ 	'<p><input type="button" value="キャンセル">'
+		+ 	'<p class="right"><input type="button" value="キャンセル">'
 		+	'<input type="submit" value="新規作成"></p></div>');
 	var win = document.getElementById("main");
 	cWindow.appendTo(win);
