@@ -1,4 +1,4 @@
-var Repository = require('auto-committer-backend')
+
 
 function createRepository(){
 	//alert("createRepository");

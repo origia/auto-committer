@@ -58,6 +58,7 @@ nav {
 	}
 }
 .main {
+	position: relative;
 	a {
 		display: block;
 		padding: 10px;
@@ -138,28 +139,25 @@ div p{
 	text-overflow: ellipsis;
 }
 
-#create-window {
+.create-window {
+	position:absolute;
 	top:0;
 	left:10%;
 	width:80%;
 	padding:20px;
 	background-color:#d3d3d3;
-	position:absolute;
-}
-#create-window li{
-	padding:5px;
-}
-#create-window li input{
-	width:70%;
-	float:right;
-}
-#create-window p{
-	text-align:right;
-}
-#create-window p input{
-	width:100px;
-	margin-left:10px;
-}
-#menu{
-	position:relative;
+	li{
+		padding:5px;
+		input {
+			width:70%;
+			float:right;
+		}
+		p {
+			text-align:right;
+			input{
+				width:100px;
+				margin-left:10px;
+			}
+		}
+	}
 }
