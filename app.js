@@ -14,7 +14,7 @@ function showCreateWindow(){
 	var win = document.getElementById("main");
 	cWindow.appendTo(win);
 	$(function(){
-		$("#modal").show();
+		$("#modal").show("fast");
 		$("nav .create").css('background', 'url(images/common/nav-selected.png) no-repeat');
 	})
 }

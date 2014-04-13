@@ -50,12 +50,18 @@ header{
 			height: 59px;
 			float: left;
 			cursor: pointer;
+			&:hover {
+				opacity: 0.7;
+			}
 		}
 		.clone {
 			width: 211px;
 			height: 59px;
 			float: left;
 			cursor: pointer;
+			&:hover {
+				opacity: 0.7;
+			}
 		}
 	}
 }
@@ -142,12 +148,16 @@ header{
 			overflow: hidden;
 			p {
 				display: block;
+				padding-top: 3px;
 				float: left;
 				text-align: right;
 			}
 			input {
+				padding: 2px;
+				padding-left: 5px;
+				padding-right: 5px;
 				margin-left: 10px;
-				width:79%;
+				width:77%;
 				height: 22px;
 				border-radius: 3px;
 				float: right;
