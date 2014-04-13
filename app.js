@@ -16,8 +16,8 @@ function showCreateWindow(){
 		+	'<li>ブックマーク名：<input type="text" name="bookmark"></li>'
 		+	'<li>保存先のパス：<input type="text" name="path"></li>'
 		+	'</ul>'
-		+ 	'<p class="right"><input type="button" value="キャンセル">'
-		+	'<input type="submit" value="新規作成"></p></div>');
+		+ 	'<div><input type="button" value="キャンセル">'
+		+	'<input type="submit" value="新規作成"></div></div>');
 	var win = document.getElementById("main");
 	cWindow.appendTo(win);
 }

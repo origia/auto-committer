@@ -152,9 +152,8 @@ div p {
       height: 22px;
       border-radius: 5px;
       float: right; }
-    .create-window li p {
-      text-align: right; }
-      .create-window li p input {
+    .create-window li div {
+      float: right; }
+      .create-window li div input {
         width: 100px;
-        margin-left: 10px;
-        float: right; }
+        margin-right: 10px; }
