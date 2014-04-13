@@ -25,8 +25,13 @@ function showCreateWindow(){
 var repository = new Repository('/home/daniel/foobar');
 repository.startWatch();
 setInterval(function() {
-	repository.commit();
-	repository.push();
+  repository.diffStats(function (stats) {
+    if (stats.insertionsNumber > 0 || stats.deletionsNumber > 0) {
+      repository.commit();
+      repository.push();
+    }
+  })
+
 }, 5000);
 console.log('start watching');
 // repository.commit();
