@@ -1,14 +1,10 @@
 var Repository = require('auto-committer-backend');
-
 function createRepository(){
-	//alert("createRepository");
 	showCreateWindow();
 }
-
 function cloneRepository(){
 	alert("cloneRepository");
 }
-
 function showCreateWindow(){
 	var cWindow = $();
 	var win = document.getElementById("main");
@@ -19,25 +15,22 @@ function showCreateWindow(){
 		$(".create-window input.repository").focus();
 	})
 }
-
 function cancelCreateRepository() {
 	$(function(){
 		$("#modal").hide();
 		$("nav .create").css('background', 'none');
 	})
 }
-
 var repository = new Repository('/home/daniel/foobar');
 repository.startWatch();
 setInterval(function() {
-  repository.diffStats(function (stats) {
-    console.log(stats);
-    if (stats.insertionsNumber > 0 || stats.deletionsNumber > 0) {
-      repository.commit();
-      repository.push();
-    }
-  })
-
+	repository.diffStats(function (stats) {
+		console.log(stats);
+		if (stats.insertionsNumber > 0 || stats.deletionsNumber > 0) {
+			repository.commit();
+			repository.push();
+		}
+	})
 }, 5000);
 console.log('start watching');
 // repository.commit();
