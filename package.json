@@ -1,0 +1,29 @@
+{
+  "name": "auto-committer-nw",
+  "version": "0.1.0",
+  "description": "Auto Committer",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/origia/auto-committer-nw.git"
+  },
+  "keywords": [
+    "git"
+  ],
+  "author": "Daniel Perez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/origia/auto-committer-nw/issues"
+  },
+  "homepage": "https://github.com/origia/auto-committer-nw",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-exec": "^0.4.5"
+  }
+}
