@@ -16,43 +16,43 @@ a {
 body {
   margin: 0;
   padding: 0;
-  min-width: 500px;
+  min-width: 520px;
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-weight: normal;
   font-size: 20px;
   background: #F0F2F6; }
-
-h1 {
-  font-size: 13px;
-  font-weight: normal;
-  padding-top: 2px;
-  color: #444; }
 
 header {
   width: 100%;
   height: 83px;
   background: url(images/common/bg-header.png);
   text-align: center; }
-
-nav {
-  margin: 0 auto;
-  width: 422px;
-  text-align: center;
-  overflow: hidden; }
-  nav img {
-    padding-top: 2px; }
-  nav p {
-    font-size: 12px;
+  header h1 {
+    font-size: 13px;
+    font-weight: normal;
+    padding-top: 2px;
     color: #444; }
-  nav .create {
-    width: 211px;
-    height: 59px;
-    float: left;
-    background: url(images/common/nav-selected.png) no-repeat; }
-  nav .clone {
-    width: 211px;
-    height: 59px;
-    float: left; }
+  header nav {
+    margin: 0 auto;
+    width: 422px;
+    text-align: center;
+    overflow: hidden; }
+    header nav img {
+      padding-top: 5px; }
+    header nav p {
+      margin-top: -3px;
+      font-size: 12px;
+      color: #444; }
+    header nav .create {
+      width: 211px;
+      height: 59px;
+      float: left;
+      cursor: pointer; }
+    header nav .clone {
+      width: 211px;
+      height: 59px;
+      float: left;
+      cursor: pointer; }
 
 .main {
   position: relative; }
@@ -62,14 +62,14 @@ nav {
     width: 100%;
     overflow: hidden; }
     .main a:hover {
-      background: #BBB;
+      background: #DDD;
       color: white; }
     .main a .title {
       padding-top: 10px;
       padding-bottom: 5px;
       float: left;
       padding-left: 10px;
-      width: 60%; }
+      width: 50%; }
     .main a h2 {
       padding-top: 5px;
       padding-left: 40px;
@@ -80,7 +80,7 @@ nav {
       background: url(images/menu/git-blue.png) no-repeat; }
     .main a .metadata {
       float: right;
-      width: 30%;
+      width: 40%;
       margin-right: 30px;
       text-align: right; }
       .main a .metadata p.path {
@@ -97,63 +97,46 @@ nav {
           font-weight: bold;
           color: #444; }
 
-div.main-data {
-  width: 70%;
-  float: left; }
-
-div.main-data h2 {
-  line-height: 44px; }
-
-div.main-data img {
-  padding: 5px;
-  float: left; }
-
-div.meta-data {
-  text-align: right;
-  width: 30%;
-  float: left; }
-
-div.meta-data {
-  text-align: right;
-  width: 30%;
-  float: left; }
-
-div p {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; }
-
-.filter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  opacity: 0.9; }
-
-.create-window {
-  position: absolute;
-  top: 0;
-  left: 10%;
-  width: 80%;
-  padding: 20px;
-  background: url(images/common/bg-clicked.png);
-  border: 1px solid #BBB;
-  z-index: 30; }
-  .create-window li {
-    padding: 5px;
-    margin-bottom: 10px;
-    color: #444;
-    font-size: 13px; }
-    .create-window li input {
-      margin-left: 10px;
-      width: 70%;
-      height: 22px;
-      border-radius: 5px;
-      float: right; }
-    .create-window li div {
-      float: right; }
-      .create-window li div input {
-        width: 100px;
-        margin-right: 10px; }
+#modal {
+  display: none; }
+  #modal .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.9; }
+  #modal .create-window {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 600px;
+    margin-left: -300px;
+    padding: 20px;
+    background: url(images/common/bg-clicked.png);
+    border: 1px solid #BBB;
+    z-index: 30; }
+    #modal .create-window li {
+      padding: 5px;
+      margin-bottom: 10px;
+      margin-right: 5%;
+      color: #444;
+      font-size: 13px;
+      overflow: hidden; }
+      #modal .create-window li p {
+        display: block;
+        float: left;
+        text-align: right; }
+      #modal .create-window li input {
+        margin-left: 10px;
+        width: 79%;
+        height: 22px;
+        border-radius: 3px;
+        float: right;
+        border: none;
+        box-shadow: 0 0 2px #444; }
+    #modal .create-window .buttons input {
+      float: right;
+      margin-right: 10px;
+      font-size: 18px; }

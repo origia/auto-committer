@@ -10,16 +10,20 @@ function cloneRepository(){
 }
 
 function showCreateWindow(){
-	var cWindow = $(
-		'<div class="filter"></div><div class="create-window"><ul>'
-		+	'<li>リポジトリ名：<input type="text" name="repository"></li>'
-		+	'<li>ブックマーク名：<input type="text" name="bookmark"></li>'
-		+	'<li>保存先のパス：<input type="text" name="path"></li>'
-		+	'</ul>'
-		+ 	'<div><input type="button" value="キャンセル">'
-		+	'<input type="submit" value="新規作成"></div></div>');
+	var cWindow = $();
 	var win = document.getElementById("main");
 	cWindow.appendTo(win);
+	$(function(){
+		$("#modal").show();
+		$("nav .create").css('background', 'url(images/common/nav-selected.png) no-repeat');
+	})
+}
+
+function cancelCreateRepository() {
+	$(function(){
+		$("#modal").hide();
+		$("nav .create").css('background', 'none');
+	})
 }
 
 var repository = new Repository('/home/daniel/foobar');
