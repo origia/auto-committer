@@ -1,0 +1,101 @@
+html, body, div, p, img, header, footer, nav, section, article, aside, figure, h1, h2, h3, h4, ul, li{
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style:none;
+	border:none;
+	box-shadow:none;
+}
+
+header{
+	width:100%;
+	background-color:#c0c0c0;
+	text-align:center;
+}
+
+header h1{
+	display:none;
+}
+
+nav {
+	text-align:center;
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:hidden;
+	}
+nav ul{
+	width:302px;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:hidden;
+}
+nav li {
+	list-style-type:none;
+	display:inline;
+	margin-left:15px;
+	margin-right:15px;
+	float:left;
+}
+nav h1 {
+	display:none;
+}
+
+div li{
+	overflow:hidden;
+}
+div.main-data{
+	width:70%;
+	float:left;
+}
+div.main-data h2{
+	line-height:44px;
+}
+div.main-data img{
+	padding:5px;
+	float:left;
+}
+div.meta-data{
+	text-align:right;
+	width:30%;
+	float:left;
+}
+
+div.meta-data{
+	text-align:right;
+	width:30%;
+	float:left;
+}
+
+div p{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#create-window {
+	top:0;
+	left:10%;
+	width:80%;
+	padding:20px;
+	background-color:#d3d3d3;
+	position:absolute;
+}
+#create-window li{
+	padding:5px;
+}
+#create-window li input{
+	width:70%;
+	float:right;
+}
+#create-window p{
+	text-align:right;
+}
+#create-window p input{
+	width:100px;
+	margin-left:10px;
+}
+
+#menu{
+	position:relative;
+}
