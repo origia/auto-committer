@@ -1,3 +1,5 @@
+var Repository = require('auto-committer-backend')
+
 function createRepository(){
 	//alert("createRepository");
 	showCreateWindow();
@@ -19,3 +21,13 @@ function showCreateWindow(){
 	var win = document.getElementById("main");
 	cWindow.appendTo(win);
 }
+
+var repository = new Repository('/home/daniel/foobar');
+repository.startWatch();
+setInterval(function() {
+	repository.commit();
+	repository.push();
+}, 5000);
+console.log('start watching');
+// repository.commit();
+// repository.push();
