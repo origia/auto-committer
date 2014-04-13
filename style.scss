@@ -58,24 +58,55 @@ nav {
 	}
 }
 .main {
-	padding: 10px;
-	width: 100%;
-	overflow: hidden;
-	.title {
-		padding-top: 10px;
-		padding-bottom: 10px;
-		float: left;
-		padding-left: 10px;
-		width: 70%;
-	}
-	h2 {
-		padding-top: 5px;
-		padding-left: 40px;
-		height: 34px;
-		font-size: 16px;
-		font-weight: normal;
-		color: #333;
-		background: url(images/menu/git-blue.png) no-repeat;
+	a {
+		display: block;
+		padding: 10px;
+		width: 100%;
+		overflow: hidden;
+		&:hover {
+			background: #BBB;
+			color: white;
+		}
+		.title {
+			padding-top: 10px;
+			padding-bottom: 5px;
+			float: left;
+			padding-left: 10px;
+			width: 60%;
+		}
+		h2 {
+			padding-top: 5px;
+			padding-left: 40px;
+			height: 34px;
+			font-size: 16px;
+			font-weight: normal;
+			color: #333;
+			background: url(images/menu/git-blue.png) no-repeat;
+		}
+		.metadata {
+			float: right;
+			width: 30%;
+			margin-right: 30px;
+			text-align: right;
+			p {
+				&.path {
+					margin-top: 5px;
+					font-size: 12px;
+					color: #666;
+				}
+				&.percentage {
+					margin-top: 10px;
+					font-size: 14px;
+					color: #6080A0;
+					span {
+						padding-left: 20px;
+						font-size: 16px;
+						font-weight: bold;
+						color: #444;
+					}
+				}
+			}
+		}
 	}
 }
 div.main-data{

@@ -54,17 +54,21 @@ nav {
     height: 59px;
     float: left; }
 
-.main {
+.main a {
+  display: block;
   padding: 10px;
   width: 100%;
   overflow: hidden; }
-  .main .title {
+  .main a:hover {
+    background: #BBB;
+    color: white; }
+  .main a .title {
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     float: left;
     padding-left: 10px;
-    width: 70%; }
-  .main h2 {
+    width: 60%; }
+  .main a h2 {
     padding-top: 5px;
     padding-left: 40px;
     height: 34px;
@@ -72,6 +76,24 @@ nav {
     font-weight: normal;
     color: #333;
     background: url(images/menu/git-blue.png) no-repeat; }
+  .main a .metadata {
+    float: right;
+    width: 30%;
+    margin-right: 30px;
+    text-align: right; }
+    .main a .metadata p.path {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #666; }
+    .main a .metadata p.percentage {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #6080A0; }
+      .main a .metadata p.percentage span {
+        padding-left: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #444; }
 
 div.main-data {
   width: 70%;
