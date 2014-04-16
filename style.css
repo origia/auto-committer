@@ -62,7 +62,8 @@ header {
   position: relative; }
   .main a {
     display: block;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     overflow: hidden; }
     .main a:hover {
@@ -72,7 +73,7 @@ header {
       padding-top: 10px;
       padding-bottom: 5px;
       float: left;
-      padding-left: 10px;
+      padding-left: 20px;
       width: 50%; }
     .main a h2 {
       padding-top: 5px;
@@ -100,6 +101,183 @@ header {
           font-size: 16px;
           font-weight: bold;
           color: #444; }
+  .main .label-area {
+    width: 100%;
+    height: 29px;
+    background: url(images/common/label-area.png);
+    border-top: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
+    color: #545454;
+    font-size: 13px; }
+    .main .label-area ul {
+      overflow: hidden; }
+      .main .label-area ul li {
+        float: left;
+        line-height: 2.3em;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: url(images/common/label-area-line.png) no-repeat;
+        background-position: right center; }
+  .main .upper-area {
+    min-width: 750px;
+    height: 300px;
+    overflow: hidden; }
+    .main .upper-area .tree {
+      float: left;
+      width: 70%;
+      height: 300px;
+      background: #F0F2F6;
+      overflow: scroll; }
+      .main .upper-area .tree .commit {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        overflow: hidden; }
+        .main .upper-area .tree .commit.even {
+          background: #DDFFE1; }
+        .main .upper-area .tree .commit .category {
+          float: left;
+          padding: 10px; }
+          .main .upper-area .tree .commit .category.blue {
+            color: #0085B2; }
+            .main .upper-area .tree .commit .category.blue .circle {
+              background: #0085B2; }
+          .main .upper-area .tree .commit .category.green {
+            color: #008C8C; }
+            .main .upper-area .tree .commit .category.green .circle {
+              background: #008C8C; }
+          .main .upper-area .tree .commit .category.orange {
+            color: #FF7A4D; }
+            .main .upper-area .tree .commit .category.orange .circle {
+              background: #FF7A4D; }
+          .main .upper-area .tree .commit .category p {
+            float: left;
+            width: 70px;
+            text-align: right; }
+          .main .upper-area .tree .commit .category .circle {
+            display: inline-block;
+            float: left;
+            margin-top: 10px;
+            margin-left: 15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px; }
+        .main .upper-area .tree .commit .comment {
+          float: left;
+          margin-top: 7px;
+          margin-left: 20px; }
+          .main .upper-area .tree .commit .comment p {
+            width: auto;
+            padding: 5px;
+            padding-left: 9px;
+            padding-right: 9px;
+            background: white;
+            color: #535353;
+            font-size: 16px;
+            letter-spacing: 1.3px;
+            text-align: left;
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            position: relative; }
+            .main .upper-area .tree .commit .comment p:before {
+              position: absolute;
+              top: 10px;
+              left: -7px;
+              display: block;
+              content: "";
+              width: 0;
+              border: 6px solid transparent;
+              border-right-color: #CCC;
+              border-left-width: 0; }
+            .main .upper-area .tree .commit .comment p:after {
+              position: absolute;
+              top: 6px;
+              left: -5px;
+              display: block;
+              content: "";
+              width: 0;
+              border: 10px solid transparent;
+              border-right-color: white;
+              border-left-width: 0; }
+        .main .upper-area .tree .commit .user {
+          float: left;
+          margin-left: 20px; }
+          .main .upper-area .tree .commit .user p {
+            font-size: 14px;
+            color: #444;
+            line-height: 3.4em; }
+        .main .upper-area .tree .commit .date {
+          float: left;
+          margin-left: 20px; }
+          .main .upper-area .tree .commit .date p {
+            font-size: 12px;
+            color: #777;
+            line-height: 4.1em; }
+    .main .upper-area .progress {
+      float: right;
+      width: 30%;
+      height: 300px;
+      background: #EFEFEF; }
+      .main .upper-area .progress .percentage {
+        font-size: 80px;
+        color: #00B2B2;
+        text-align: center; }
+      .main .upper-area .progress .todo {
+        margin-top: -15px;
+        font-size: 22px;
+        color: #FF7373;
+        text-align: center; }
+        .main .upper-area .progress .todo span {
+          font-size: 32px; }
+      .main .upper-area .progress .next {
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        width: 225px;
+        font-size: 16px;
+        color: #535353;
+        background: #DDD;
+        border: 1px solid #CCC;
+        border-radius: 5px; }
+      .main .upper-area .progress .will {
+        margin: 0 auto;
+        width: 230px;
+        font-size: 14px;
+        color: #535353;
+        text-align: right; }
+        .main .upper-area .progress .will span {
+          font-size: 25px;
+          font-weight: bold;
+          color: #0085B2; }
+  .main .lower-area {
+    height: auto;
+    overflow: hidden; }
+    .main .lower-area .files {
+      float: left;
+      width: 50%;
+      height: 200px;
+      overflow: scroll; }
+      .main .lower-area .files .file {
+        display: block;
+        padding: 5px;
+        height: 21px;
+        overflow: hidden;
+        font-size: 13px;
+        color: #333; }
+        .main .lower-area .files .file.even {
+          background: #DDD; }
+        .main .lower-area .files .file.selected, .main .lower-area .files .file:hover {
+          background: #BBB;
+          cursor: pointer; }
+        .main .lower-area .files .file .icon {
+          float: left;
+          margin-top: 2px; }
+        .main .lower-area .files .file .name {
+          float: left;
+          margin-left: 10px;
+          width: 100px; }
+        .main .lower-area .files .file .path {
+          float: left;
+          margin-left: 10px; }
 
 #modal {
   display: none; }

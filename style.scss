@@ -69,7 +69,8 @@ header{
 	position: relative;
 	a {
 		display: block;
-		padding: 10px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 		width: 100%;
 		overflow: hidden;
 		&:hover {
@@ -80,7 +81,7 @@ header{
 			padding-top: 10px;
 			padding-bottom: 5px;
 			float: left;
-			padding-left: 10px;
+			padding-left: 20px;
 			width: 50%;
 		}
 		h2 {
@@ -115,6 +116,223 @@ header{
 					}
 				}
 			}
+		}
+	}
+	.label-area {
+		width: 100%;
+		height: 29px;
+		background: url(images/common/label-area.png);
+		border-top: 1px solid #AAA;
+		border-bottom: 1px solid #AAA;
+		color: #545454;
+		font-size: 13px;
+		ul {
+			overflow: hidden;
+			li {
+				float: left;
+				line-height: 2.3em;
+				padding-left: 10px;
+				padding-right: 10px;
+				background: url(images/common/label-area-line.png) no-repeat;
+				background-position: right center;
+			}
+		}
+	}
+	.upper-area {
+		min-width: 750px;
+		height: 300px;
+		overflow: hidden;
+		.tree {
+			float: left;
+			width: 70%;
+			height: 300px;
+			background: #F0F2F6;
+			overflow: scroll;
+			.commit {
+				padding-top: 15px;
+				padding-bottom: 15px;
+				overflow: hidden;
+				&.even {
+					background: #DDFFE1;
+				}
+				.category {
+					float: left;
+					padding: 10px;
+					&.blue {
+						color: #0085B2;
+						.circle {
+							background: #0085B2;
+						}
+					}
+					&.green {
+						color: #008C8C;
+						.circle {
+							background: #008C8C;
+						}
+					}
+					&.orange {
+						color: #FF7A4D;
+						.circle {
+							background: #FF7A4D;
+						}
+					}
+					p {
+						float: left;
+						width: 70px;
+						text-align: right;
+					}
+					.circle {
+						display: inline-block;
+						float: left;
+						margin-top: 10px;
+						margin-left: 15px;
+						width: 10px;
+						height: 10px;
+						border-radius: 5px;
+					}
+				}
+				.comment {
+					float: left;
+					margin-top: 7px;
+					margin-left: 20px;
+					p {
+						width: auto;
+						padding: 5px;
+						padding-left: 9px;
+						padding-right: 9px;
+						background: white;
+						color: #535353;
+						font-size: 16px;
+						letter-spacing: 1.3px;
+						text-align: left;
+						border-radius: 5px;
+						border: 1px solid #CCC;
+						position: relative;
+						&:before {
+							position:absolute;
+							top:10px;
+							left: -7px;
+							display:block;
+							content:"";
+							width:0;
+							border:6px solid transparent;
+							border-right-color:#CCC;
+							border-left-width:0;
+						}
+						&:after {
+							position:absolute;
+							top:6px;
+							left:-5px;
+							display:block;
+							content:"";
+							width:0;
+							border:10px solid transparent;
+							border-right-color:white;
+							border-left-width:0;
+						}
+					}
+				}
+				.user {
+					float: left;
+					margin-left: 20px;
+					p {
+						font-size: 14px;
+						color: #444;
+						line-height: 3.4em;
+					}
+				}
+				.date {
+					float: left;
+					margin-left: 20px;
+					p {
+						font-size: 12px;
+						color: #777;
+						line-height: 4.1em;
+					}
+				}
+			}
+		}
+		.progress {
+			float: right;
+			width: 30%;
+			height: 300px;
+			background: #EFEFEF;
+			.percentage {
+				font-size: 80px;
+				color: #00B2B2;
+				text-align: center;
+			}
+			.todo {
+				margin-top: -15px;
+				font-size: 22px;
+				color: #FF7373;
+				text-align: center;
+				span {
+					font-size: 32px;
+				}
+			}
+			.next {
+				margin: 0 auto;
+				margin-top: 10px;
+				padding: 10px;
+				width: 225px;
+				font-size: 16px;
+				color: #535353;
+				background: #DDD;
+				border: 1px solid #CCC;
+				border-radius: 5px;
+			}
+			.will {
+				margin: 0 auto;
+				width: 230px;
+				font-size: 14px;
+				color: #535353;
+				text-align: right;
+				span {
+					font-size: 25px;
+					font-weight: bold;
+					color: #0085B2;
+				}
+			}
+		}
+	}
+	.lower-area {
+		height: auto;
+		overflow: hidden;
+		.files {
+			float: left;
+			width: 50%;
+			height: 200px;
+			overflow: scroll;
+			.file {
+				display: block;
+				padding: 5px;
+				height: 21px;
+				overflow: hidden;
+				font-size: 13px;
+				color: #333;
+				&.even {
+					background: #DDD;
+				}
+				&.selected, &:hover {
+					background: #BBB;
+					cursor: pointer;
+				}
+				.icon {
+					float: left;
+					margin-top: 2px;
+				}
+				.name {
+					float: left;
+					margin-left: 10px;
+					width: 100px;
+				}
+				.path {
+					float: left;
+					margin-left: 10px;
+				}
+			}
+
 		}
 	}
 }
