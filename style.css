@@ -254,7 +254,7 @@ header {
     .main .lower-area .files {
       float: left;
       width: 50%;
-      height: 200px;
+      height: 150px;
       overflow: scroll; }
       .main .lower-area .files .file {
         display: block;
@@ -278,6 +278,32 @@ header {
         .main .lower-area .files .file .path {
           float: left;
           margin-left: 10px; }
+    .main .lower-area .codes {
+      height: 150px;
+      overflow: scroll; }
+      .main .lower-area .codes table {
+        background: #DDD;
+        font-size: 11px;
+        color: #777;
+        text-align: center;
+        line-height: 1.4em;
+        border-collapse: collapse; }
+        .main .lower-area .codes table tr td {
+          padding: 2px;
+          padding-left: 5px;
+          padding-right: 5px;
+          border-left: 1px solid #AAA; }
+          .main .lower-area .codes table tr td:nth-child(4) {
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            color: #333; }
+        .main .lower-area .codes table tr.unchanged:nth-child(4) {
+          background: #EEE; }
+        .main .lower-area .codes table tr.plus {
+          background: #BFFFCF; }
+        .main .lower-area .codes table tr.minus {
+          background: #FFBFBF; }
 
 #modal {
   display: none; }
