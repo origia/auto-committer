@@ -216,7 +216,9 @@ header {
       float: right;
       width: 30%;
       height: 300px;
-      background: #EFEFEF; }
+      background: #EFEFEF;
+      border-left: 1px solid #BBB;
+      box-sizing: border-box; }
       .main .upper-area .progress .percentage {
         font-size: 80px;
         color: #00B2B2;
@@ -249,12 +251,15 @@ header {
           font-weight: bold;
           color: #0085B2; }
   .main .lower-area {
-    height: auto;
-    overflow: hidden; }
+    height: 160px;
+    overflow: hidden;
+    border-bottom: 1px solid #BBB; }
     .main .lower-area .files {
       float: left;
+      padding-bottom: 32767px;
+      margin-bottom: -32767px;
       width: 50%;
-      height: 150px;
+      height: 160px;
       overflow: scroll; }
       .main .lower-area .files .file {
         display: block;
@@ -279,9 +284,13 @@ header {
           float: left;
           margin-left: 10px; }
     .main .lower-area .codes {
-      height: 150px;
-      overflow: scroll; }
+      overflow: scroll;
+      height: 160px;
+      padding-bottom: 32767px;
+      margin-bottom: -32767px;
+      background: #BBB; }
       .main .lower-area .codes table {
+        height: 160px;
         background: #DDD;
         font-size: 11px;
         color: #777;
