@@ -24,14 +24,45 @@
 	<div class="main" id="main">
 		<div id="modal">
 			<div class="filter"></div>
-			<div class="create-window">
-				<ul>
-					<li><p>リポジトリ名：</p><input class="repository" type="text" name="repository"></li>
-					<li><p>ブックマーク名：</p><input class="bookmark" type="text" name="bookmark"></li>
-					<li><p>保存先のパス：</p><input class="path" type="text" name="path"></li>
-				</ul>
+			<div class="create-window todo">
+				<div class="categories">
+					<div class="category green">
+						<div class="title">
+							<h2>dev</h2>
+							<a class="edit" href="#">
+								<div class="option-window">
+									<p>カテゴリー名を編集</p>
+									<p>このカテゴリーを削除</p>
+								</div>
+							</a>
+						</div>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>htmlの大枠をつくる</h3>
+						</a>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>ヘッダーメニューをhtml/CSS化</h3>
+						</a>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>メインビジュアルをhtml/CSS化</h3>
+						</a>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>フッターをhtml/CSS化</h3>
+						</a>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>協賛企業のリンクバナーを全てスポンサーエリアにいれる</h3>
+						</a>
+						<a class="add">
+							<h3>+ ToDoを追加</h3>
+						</a>
+					</div>
+				</div>
 				<div class="buttons">
-					<input type="submit" value="新規作成" disabled="disabled">
+					<input type="submit" value="完了" disabled="disabled">
 					<input type="button" value="キャンセル" onclick="cancelCreateRepository()">
 				</div>
 			</div>
