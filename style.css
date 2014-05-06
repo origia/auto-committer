@@ -60,22 +60,22 @@ header {
 
 .main {
   position: relative; }
-  .main a {
+  .main a.rep {
     display: block;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
     overflow: hidden; }
-    .main a:hover {
+    .main a.rep:hover {
       background: #DDD;
       color: white; }
-    .main a .title {
+    .main a.rep .title {
       padding-top: 10px;
       padding-bottom: 5px;
       float: left;
       padding-left: 20px;
       width: 50%; }
-    .main a h2 {
+    .main a.rep h2 {
       padding-top: 5px;
       padding-left: 40px;
       height: 34px;
@@ -83,20 +83,20 @@ header {
       font-weight: normal;
       color: #333;
       background: url(images/menu/git-blue.png) no-repeat; }
-    .main a .metadata {
+    .main a.rep .metadata {
       float: right;
       width: 40%;
       margin-right: 30px;
       text-align: right; }
-      .main a .metadata p.path {
+      .main a.rep .metadata p.path {
         margin-top: 5px;
         font-size: 12px;
         color: #666; }
-      .main a .metadata p.percentage {
+      .main a.rep .metadata p.percentage {
         margin-top: 10px;
         font-size: 14px;
         color: #6080A0; }
-        .main a .metadata p.percentage span {
+        .main a.rep .metadata p.percentage span {
           padding-left: 20px;
           font-size: 16px;
           font-weight: bold;
@@ -376,21 +376,22 @@ header {
       width: 900px; }
       #modal .create-window.todo .categories {
         overflow: hidden;
-        padding: 20px; }
-        #modal .create-window.todo .categories .category {
+        padding-top: 20px; }
+        #modal .create-window.todo .categories .category, #modal .create-window.todo .categories .add-category {
           float: left;
+          margin-bottom: 20px;
           margin-left: 22px;
           width: 415px;
           background: #F4F4F4;
           border: 1px solid #DDD;
           border-radius: 10px; }
-          #modal .create-window.todo .categories .category .title {
+          #modal .create-window.todo .categories .category .title, #modal .create-window.todo .categories .add-category .title {
             position: relative;
             width: 100%;
             height: 43px;
             background: #008c8c;
             border-radius: 10px 10px 0 0; }
-            #modal .create-window.todo .categories .category .title h2 {
+            #modal .create-window.todo .categories .category .title h2, #modal .create-window.todo .categories .add-category .title h2 {
               padding-top: 9px;
               padding-left: 3px;
               background: url(images/todo/git-white.png) no-repeat;
@@ -400,7 +401,7 @@ header {
               text-align: center;
               font-size: 16px;
               letter-spacing: 2px; }
-            #modal .create-window.todo .categories .category .title .edit {
+            #modal .create-window.todo .categories .category .title .edit, #modal .create-window.todo .categories .add-category .title .edit {
               display: block;
               position: absolute;
               top: 18px;
@@ -410,11 +411,12 @@ header {
               background: url(images/common/arrow.png) no-repeat;
               background-size: 12px 8px;
               opacity: 0.8; }
-              #modal .create-window.todo .categories .category .title .edit:hover {
+              #modal .create-window.todo .categories .category .title .edit:hover, #modal .create-window.todo .categories .add-category .title .edit:hover {
                 opacity: 0.5; }
-              #modal .create-window.todo .categories .category .title .edit .option-window {
+              #modal .create-window.todo .categories .category .title .edit .option-window, #modal .create-window.todo .categories .add-category .title .edit .option-window {
                 display: none; }
-          #modal .create-window.todo .categories .category .todo, #modal .create-window.todo .categories .category .add {
+          #modal .create-window.todo .categories .category .todo, #modal .create-window.todo .categories .category .add, #modal .create-window.todo .categories .add-category .todo, #modal .create-window.todo .categories .add-category .add {
+            display: block;
             overflow: hidden;
             margin-top: 5px;
             margin-left: auto;
@@ -425,36 +427,104 @@ header {
             padding-right: 10px;
             width: 380px;
             min-height: 30px;
-            background: #E4FFEB;
+            background: #e4ffeb;
             border-radius: 5px;
             border: 1px solid #CCC; }
-            #modal .create-window.todo .categories .category .todo:hover, #modal .create-window.todo .categories .category .add:hover {
+            #modal .create-window.todo .categories .category .todo:hover, #modal .create-window.todo .categories .category .add:hover, #modal .create-window.todo .categories .add-category .todo:hover, #modal .create-window.todo .categories .add-category .add:hover {
               cursor: pointer;
-              background: #CCC; }
-            #modal .create-window.todo .categories .category .todo input, #modal .create-window.todo .categories .category .add input {
+              opacity: 0.8; }
+            #modal .create-window.todo .categories .category .todo.selected:hover, #modal .create-window.todo .categories .category .add.selected:hover, #modal .create-window.todo .categories .add-category .todo.selected:hover, #modal .create-window.todo .categories .add-category .add.selected:hover {
+              cursor: default;
+              background: #E4FFEB; }
+            #modal .create-window.todo .categories .category .todo input[type="checkbox"], #modal .create-window.todo .categories .category .add input[type="checkbox"], #modal .create-window.todo .categories .add-category .todo input[type="checkbox"], #modal .create-window.todo .categories .add-category .add input[type="checkbox"] {
               float: left;
               width: 15px;
               height: 15px;
               cursor: pointer; }
-            #modal .create-window.todo .categories .category .todo h3, #modal .create-window.todo .categories .category .add h3 {
+            #modal .create-window.todo .categories .category .todo h3, #modal .create-window.todo .categories .category .add h3, #modal .create-window.todo .categories .add-category .todo h3, #modal .create-window.todo .categories .add-category .add h3 {
               float: left;
               margin-left: 10px;
               width: 346px;
               color: #555;
               font-size: 16px;
               font-weight: normal; }
-          #modal .create-window.todo .categories .category .add {
+            #modal .create-window.todo .categories .category .todo .progress, #modal .create-window.todo .categories .category .add .progress, #modal .create-window.todo .categories .add-category .todo .progress, #modal .create-window.todo .categories .add-category .add .progress {
+              clear: both;
+              overflow: hidden; }
+              #modal .create-window.todo .categories .category .todo .progress input, #modal .create-window.todo .categories .category .add .progress input, #modal .create-window.todo .categories .add-category .todo .progress input, #modal .create-window.todo .categories .add-category .add .progress input {
+                float: left;
+                margin-top: 10px;
+                margin-right: 15px;
+                width: 250px; }
+              #modal .create-window.todo .categories .category .todo .progress p, #modal .create-window.todo .categories .category .add .progress p, #modal .create-window.todo .categories .add-category .todo .progress p, #modal .create-window.todo .categories .add-category .add .progress p {
+                float: left;
+                color: #FF7373;
+                font-size: 19px; }
+                #modal .create-window.todo .categories .category .todo .progress p span, #modal .create-window.todo .categories .category .add .progress p span, #modal .create-window.todo .categories .add-category .todo .progress p span, #modal .create-window.todo .categories .add-category .add .progress p span {
+                  margin-left: 10px;
+                  font-size: 22px; }
+          #modal .create-window.todo .categories .category .input, #modal .create-window.todo .categories .add-category .input {
+            overflow: hidden;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 7px; }
+            #modal .create-window.todo .categories .category .input input[type="text"], #modal .create-window.todo .categories .add-category .input input[type="text"] {
+              float: left;
+              padding-left: 5px;
+              width: 350px;
+              min-height: 30px;
+              font-size: 16px;
+              border-radius: 5px;
+              border: 1px solid #CCC; }
+            #modal .create-window.todo .categories .category .input .close, #modal .create-window.todo .categories .add-category .input .close {
+              display: block;
+              float: left;
+              margin-top: 10px;
+              margin-left: 7px;
+              width: 17px;
+              height: 17px;
+              background: url(images/common/close.png) no-repeat;
+              background-position: 98% center; }
+              #modal .create-window.todo .categories .category .input .close:hover, #modal .create-window.todo .categories .add-category .input .close:hover {
+                opacity: 0.8;
+                cursor: pointer; }
+          #modal .create-window.todo .categories .category .add, #modal .create-window.todo .categories .add-category .add {
             margin-bottom: 10px;
             background: #CCC; }
-            #modal .create-window.todo .categories .category .add h3 {
+            #modal .create-window.todo .categories .category .add h3, #modal .create-window.todo .categories .add-category .add h3 {
               padding-top: 8px;
               padding-bottom: 12px;
               text-align: center;
               color: #777; }
-            #modal .create-window.todo .categories .category .add:hover {
+            #modal .create-window.todo .categories .category .add:hover, #modal .create-window.todo .categories .add-category .add:hover {
               background: #AAA; }
-              #modal .create-window.todo .categories .category .add:hover h3 {
+              #modal .create-window.todo .categories .category .add:hover h3, #modal .create-window.todo .categories .add-category .add:hover h3 {
                 color: white; }
+          #modal .create-window.todo .categories .category.green .title, #modal .create-window.todo .categories .add-category.green .title {
+            background: #008c8c; }
+          #modal .create-window.todo .categories .category.green .todo, #modal .create-window.todo .categories .add-category.green .todo {
+            background: #e4ffeb; }
+          #modal .create-window.todo .categories .category.orange .title, #modal .create-window.todo .categories .add-category.orange .title {
+            background: #ff7a4d; }
+          #modal .create-window.todo .categories .category.orange .todo, #modal .create-window.todo .categories .add-category.orange .todo {
+            background: #ffe8db; }
+          #modal .create-window.todo .categories .category.blue .title, #modal .create-window.todo .categories .add-category.blue .title {
+            background: #0085b2; }
+          #modal .create-window.todo .categories .category.blue .todo, #modal .create-window.todo .categories .add-category.blue .todo {
+            background: #eaf2ff; }
+        #modal .create-window.todo .categories .add-category {
+          display: block; }
+          #modal .create-window.todo .categories .add-category .title {
+            height: 67px;
+            background: #AAA;
+            border-radius: 10px; }
+            #modal .create-window.todo .categories .add-category .title h2 {
+              padding-top: 20px;
+              padding-left: 40px;
+              background-position: 28% 20px; }
+          #modal .create-window.todo .categories .add-category:hover {
+            cursor: pointer;
+            opacity: 0.7; }
       #modal .create-window.todo .buttons {
         padding: 20px;
         padding-bottom: 40px;

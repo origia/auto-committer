@@ -35,3 +35,7 @@ setInterval(function() {
 console.log('start watching');
 // repository.commit();
 // repository.push();
+
+function showValue () {
+	document.getElementById("showRangeArea").innerHTML = document.getElementById("todoProgress").value;
+}

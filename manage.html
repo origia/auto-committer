@@ -48,18 +48,61 @@
 							<input type="checkbox">
 							<h3>メインビジュアルをhtml/CSS化</h3>
 						</a>
-						<a class="todo">
+						<a class="todo selected">
 							<input type="checkbox">
 							<h3>フッターをhtml/CSS化</h3>
+							<div class="progress">
+								<input id="todoProgress" type="range" step="5" value="0" onchange="showValue()">
+								<p>進捗<span id="showRangeArea">0</span> %</p>
+							</div>
 						</a>
 						<a class="todo">
 							<input type="checkbox">
 							<h3>協賛企業のリンクバナーを全てスポンサーエリアにいれる</h3>
 						</a>
+						<div class="input">
+							<input type="text">
+							<a class="close"></a>
+						</div>
 						<a class="add">
 							<h3>+ ToDoを追加</h3>
 						</a>
 					</div>
+					<div class="category orange">
+						<div class="title">
+							<h2>design</h2>
+							<a class="edit" href="#">
+								<div class="option-window">
+									<p>カテゴリー名を編集</p>
+									<p>このカテゴリーを削除</p>
+								</div>
+							</a>
+						</div>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>外観をPhotoshopでつくる</h3>
+						</a>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>画像をimagesフォルダに全て書き出し</h3>
+						</a>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>全ての画像を最適化して容量を減らす</h3>
+						</a>
+						<a class="todo">
+							<input type="checkbox">
+							<h3>協賛企業のリンクバナー制作</h3>
+						</a>
+						<a class="add">
+							<h3>+ ToDoを追加</h3>
+						</a>
+					</div>
+					<a href="#" class="add-category">
+						<div class="title">
+							<h2>+ カテゴリーを追加</h2>
+						</div>
+					</a>
 				</div>
 				<div class="buttons">
 					<input type="submit" value="完了" disabled="disabled">
@@ -242,7 +285,7 @@
 					<tr class="minus">
 						<td></td>
 						<td>9</td>
-						<td></td>
+						<td>-</td>
 						<td>&lt;body&gt;</td>
 					</tr>
 				</table>
