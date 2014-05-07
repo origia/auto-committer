@@ -455,7 +455,8 @@ header {
                 float: left;
                 margin-top: 10px;
                 margin-right: 15px;
-                width: 250px; }
+                width: 250px;
+                cursor: pointer; }
               #modal .create-window.todo .categories .category .todo .progress p, #modal .create-window.todo .categories .category .add .progress p, #modal .create-window.todo .categories .add-category .todo .progress p, #modal .create-window.todo .categories .add-category .add .progress p {
                 float: left;
                 color: #FF7373;
