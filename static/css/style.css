@@ -1,0 +1,532 @@
+@charset "UTF-8";
+html, body, div, p, img, header, footer, nav, section, article, aside, figure, h1, h2, h3, h4, ul, li {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  box-shadow: none; }
+
+a {
+  text-decoration: none; }
+
+.center {
+  text-align: center; }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 520px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  background: #F0F2F6; }
+
+header {
+  width: 100%;
+  height: 83px;
+  background: url(../images/common/bg-header.png);
+  text-align: center; }
+  header h1 {
+    font-size: 13px;
+    font-weight: normal;
+    padding-top: 2px;
+    color: #444; }
+  header nav {
+    margin: 0 auto;
+    width: 422px;
+    text-align: center;
+    overflow: hidden; }
+    header nav img {
+      padding-top: 5px; }
+    header nav p {
+      margin-top: -5px;
+      font-size: 12px;
+      color: #444; }
+    header nav .create {
+      width: 211px;
+      height: 59px;
+      float: left;
+      cursor: pointer; }
+      header nav .create:hover {
+        opacity: 0.7; }
+    header nav .clone {
+      width: 211px;
+      height: 59px;
+      float: left;
+      cursor: pointer; }
+      header nav .clone:hover {
+        opacity: 0.7; }
+
+.main {
+  position: relative; }
+  .main a.rep {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    overflow: hidden; }
+    .main a.rep:hover {
+      background: #DDD;
+      color: white; }
+    .main a.rep .title {
+      padding-top: 10px;
+      padding-bottom: 5px;
+      float: left;
+      padding-left: 20px;
+      width: 50%; }
+    .main a.rep h2 {
+      padding-top: 5px;
+      padding-left: 40px;
+      height: 34px;
+      font-size: 16px;
+      font-weight: normal;
+      color: #333;
+      background: url(../images/menu/git-blue.png) no-repeat; }
+    .main a.rep .metadata {
+      float: right;
+      width: 40%;
+      margin-right: 30px;
+      text-align: right; }
+      .main a.rep .metadata p.path {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #666; }
+      .main a.rep .metadata p.percentage {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #6080A0; }
+        .main a.rep .metadata p.percentage span {
+          padding-left: 20px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #444; }
+  .main .label-area {
+    width: 100%;
+    height: 29px;
+    background: url(../images/common/label-area.png);
+    border-top: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
+    color: #545454;
+    font-size: 13px; }
+    .main .label-area ul {
+      overflow: hidden; }
+      .main .label-area ul li {
+        float: left;
+        line-height: 2.3em;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: url(../images/common/label-area-line.png) no-repeat;
+        background-position: right center; }
+  .main .upper-area {
+    min-width: 750px;
+    height: 300px;
+    overflow: hidden; }
+    .main .upper-area .tree {
+      float: left;
+      width: 70%;
+      height: 300px;
+      background: #F0F2F6;
+      overflow: scroll; }
+      .main .upper-area .tree .commit {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        overflow: hidden; }
+        .main .upper-area .tree .commit.even {
+          background: #DDFFE1; }
+        .main .upper-area .tree .commit .category {
+          float: left;
+          padding: 10px; }
+          .main .upper-area .tree .commit .category.blue {
+            color: #0085b2; }
+            .main .upper-area .tree .commit .category.blue .circle {
+              background: #0085b2; }
+          .main .upper-area .tree .commit .category.green {
+            color: #008c8c; }
+            .main .upper-area .tree .commit .category.green .circle {
+              background: #008c8c; }
+          .main .upper-area .tree .commit .category.orange {
+            color: #ff7a4d; }
+            .main .upper-area .tree .commit .category.orange .circle {
+              background: #ff7a4d; }
+          .main .upper-area .tree .commit .category p {
+            float: left;
+            width: 70px;
+            text-align: right; }
+          .main .upper-area .tree .commit .category .circle {
+            display: inline-block;
+            float: left;
+            margin-top: 10px;
+            margin-left: 15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px; }
+        .main .upper-area .tree .commit .comment {
+          float: left;
+          margin-top: 7px;
+          margin-left: 20px;
+          z-index: 10; }
+          .main .upper-area .tree .commit .comment p {
+            width: auto;
+            padding: 5px;
+            padding-left: 9px;
+            padding-right: 9px;
+            background: white;
+            color: #535353;
+            font-size: 16px;
+            letter-spacing: 1.3px;
+            text-align: left;
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            position: relative; }
+            .main .upper-area .tree .commit .comment p:before {
+              position: absolute;
+              top: 10px;
+              left: -7px;
+              display: block;
+              content: "";
+              width: 0;
+              border: 6px solid transparent;
+              border-right-color: #CCC;
+              border-left-width: 0; }
+            .main .upper-area .tree .commit .comment p:after {
+              position: absolute;
+              top: 6px;
+              left: -5px;
+              display: block;
+              content: "";
+              width: 0;
+              border: 10px solid transparent;
+              border-right-color: white;
+              border-left-width: 0; }
+        .main .upper-area .tree .commit .user {
+          float: left;
+          margin-left: 20px; }
+          .main .upper-area .tree .commit .user p {
+            font-size: 14px;
+            color: #444;
+            line-height: 3.4em; }
+        .main .upper-area .tree .commit .date {
+          float: left;
+          margin-left: 20px; }
+          .main .upper-area .tree .commit .date p {
+            font-size: 12px;
+            color: #777;
+            line-height: 4.1em; }
+    .main .upper-area .progress {
+      float: right;
+      width: 30%;
+      height: 300px;
+      background: #EFEFEF;
+      border-left: 1px solid #BBB;
+      box-sizing: border-box; }
+      .main .upper-area .progress .percentage {
+        font-size: 80px;
+        color: #00B2B2;
+        text-align: center; }
+      .main .upper-area .progress .todo {
+        margin-top: -15px;
+        font-size: 22px;
+        color: #FF7373;
+        text-align: center; }
+        .main .upper-area .progress .todo span {
+          font-size: 32px; }
+      .main .upper-area .progress .next {
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        width: 225px;
+        font-size: 16px;
+        color: #535353;
+        background: #DDD;
+        border: 1px solid #CCC;
+        border-radius: 5px; }
+      .main .upper-area .progress .will {
+        margin: 0 auto;
+        width: 230px;
+        font-size: 14px;
+        color: #535353;
+        text-align: right; }
+        .main .upper-area .progress .will span {
+          font-size: 25px;
+          font-weight: bold;
+          color: #0085B2; }
+  .main .lower-area {
+    height: 160px;
+    overflow: hidden;
+    border-bottom: 1px solid #BBB; }
+    .main .lower-area .files {
+      float: left;
+      padding-bottom: 32767px;
+      margin-bottom: -32767px;
+      width: 50%;
+      height: 160px;
+      overflow: scroll; }
+      .main .lower-area .files .file {
+        display: block;
+        padding: 5px;
+        height: 21px;
+        overflow: hidden;
+        font-size: 13px;
+        color: #333; }
+        .main .lower-area .files .file.even {
+          background: #DDD; }
+        .main .lower-area .files .file.selected, .main .lower-area .files .file:hover {
+          background: #BBB;
+          cursor: pointer; }
+        .main .lower-area .files .file .icon {
+          float: left;
+          margin-top: 2px; }
+        .main .lower-area .files .file .name {
+          float: left;
+          margin-left: 10px;
+          width: 100px; }
+        .main .lower-area .files .file .path {
+          float: left;
+          margin-left: 10px; }
+    .main .lower-area .codes {
+      overflow: scroll;
+      height: 160px;
+      padding-bottom: 32767px;
+      margin-bottom: -32767px;
+      background: #BBB; }
+      .main .lower-area .codes table {
+        height: 160px;
+        background: #DDD;
+        font-size: 11px;
+        color: #777;
+        text-align: center;
+        line-height: 1.4em;
+        border-collapse: collapse; }
+        .main .lower-area .codes table tr td {
+          padding: 2px;
+          padding-left: 5px;
+          padding-right: 5px;
+          border-left: 1px solid #AAA; }
+          .main .lower-area .codes table tr td:nth-child(4) {
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            color: #333; }
+        .main .lower-area .codes table tr.unchanged:nth-child(4) {
+          background: #EEE; }
+        .main .lower-area .codes table tr.plus {
+          background: #BFFFCF; }
+        .main .lower-area .codes table tr.minus {
+          background: #FFBFBF; }
+
+#modal {
+  display: none; }
+  #modal .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.9;
+    z-index: 20; }
+  #modal .create-window {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 600px;
+    margin-left: -300px;
+    padding: 20px;
+    background: url(../images/common/bg-clicked.png);
+    border: 1px solid #BBB;
+    z-index: 30; }
+    #modal .create-window li {
+      padding: 5px;
+      margin-bottom: 10px;
+      margin-right: 5%;
+      color: #444;
+      font-size: 13px;
+      overflow: hidden; }
+      #modal .create-window li p {
+        display: block;
+        padding-top: 3px;
+        float: left;
+        text-align: right; }
+      #modal .create-window li input {
+        padding: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 10px;
+        width: 77%;
+        height: 22px;
+        border-radius: 3px;
+        float: left;
+        border: none;
+        box-shadow: 0 0 2px #444; }
+        #modal .create-window li input.repository {
+          width: 50%;
+          margin-left: 23px; }
+        #modal .create-window li input.bookmark {
+          width: 50%; }
+        #modal .create-window li input.path {
+          margin-left: 23px; }
+    #modal .create-window .buttons input {
+      float: right;
+      margin-right: 10px;
+      font-size: 18px; }
+    #modal .create-window.todo {
+      margin-left: -450px;
+      padding: 0;
+      width: 900px; }
+      #modal .create-window.todo .categories {
+        overflow: hidden;
+        padding-top: 20px; }
+        #modal .create-window.todo .categories .category, #modal .create-window.todo .categories .add-category {
+          float: left;
+          margin-bottom: 20px;
+          margin-left: 22px;
+          width: 415px;
+          background: #F4F4F4;
+          border: 1px solid #DDD;
+          border-radius: 10px; }
+          #modal .create-window.todo .categories .category .title, #modal .create-window.todo .categories .add-category .title {
+            position: relative;
+            width: 100%;
+            height: 43px;
+            background: #008c8c;
+            border-radius: 10px 10px 0 0; }
+            #modal .create-window.todo .categories .category .title h2, #modal .create-window.todo .categories .add-category .title h2 {
+              padding-top: 9px;
+              padding-left: 3px;
+              background: url(../images/todo/git-white.png) no-repeat;
+              background-size: 27px 26px;
+              background-position: 40% 8px;
+              color: white;
+              text-align: center;
+              font-size: 16px;
+              letter-spacing: 2px; }
+            #modal .create-window.todo .categories .category .title .edit, #modal .create-window.todo .categories .add-category .title .edit {
+              display: block;
+              position: absolute;
+              top: 18px;
+              right: 37%;
+              width: 20px;
+              height: 20px;
+              background: url(../images/common/arrow.png) no-repeat;
+              background-size: 12px 8px;
+              opacity: 0.8; }
+              #modal .create-window.todo .categories .category .title .edit:hover, #modal .create-window.todo .categories .add-category .title .edit:hover {
+                opacity: 0.5; }
+              #modal .create-window.todo .categories .category .title .edit .option-window, #modal .create-window.todo .categories .add-category .title .edit .option-window {
+                display: none; }
+          #modal .create-window.todo .categories .category .todo, #modal .create-window.todo .categories .category .add, #modal .create-window.todo .categories .add-category .todo, #modal .create-window.todo .categories .add-category .add {
+            display: block;
+            overflow: hidden;
+            margin-top: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 7px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 380px;
+            min-height: 30px;
+            background: #e4ffeb;
+            border-radius: 5px;
+            border: 1px solid #CCC; }
+            #modal .create-window.todo .categories .category .todo:hover, #modal .create-window.todo .categories .category .add:hover, #modal .create-window.todo .categories .add-category .todo:hover, #modal .create-window.todo .categories .add-category .add:hover {
+              cursor: pointer;
+              opacity: 0.8; }
+            #modal .create-window.todo .categories .category .todo.selected:hover, #modal .create-window.todo .categories .category .add.selected:hover, #modal .create-window.todo .categories .add-category .todo.selected:hover, #modal .create-window.todo .categories .add-category .add.selected:hover {
+              cursor: default;
+              background: #E4FFEB; }
+            #modal .create-window.todo .categories .category .todo input[type="checkbox"], #modal .create-window.todo .categories .category .add input[type="checkbox"], #modal .create-window.todo .categories .add-category .todo input[type="checkbox"], #modal .create-window.todo .categories .add-category .add input[type="checkbox"] {
+              float: left;
+              width: 15px;
+              height: 15px;
+              cursor: pointer; }
+            #modal .create-window.todo .categories .category .todo h3, #modal .create-window.todo .categories .category .add h3, #modal .create-window.todo .categories .add-category .todo h3, #modal .create-window.todo .categories .add-category .add h3 {
+              float: left;
+              margin-left: 10px;
+              width: 346px;
+              color: #555;
+              font-size: 16px;
+              font-weight: normal; }
+            #modal .create-window.todo .categories .category .todo .progress, #modal .create-window.todo .categories .category .add .progress, #modal .create-window.todo .categories .add-category .todo .progress, #modal .create-window.todo .categories .add-category .add .progress {
+              clear: both;
+              overflow: hidden; }
+              #modal .create-window.todo .categories .category .todo .progress input, #modal .create-window.todo .categories .category .add .progress input, #modal .create-window.todo .categories .add-category .todo .progress input, #modal .create-window.todo .categories .add-category .add .progress input {
+                float: left;
+                margin-top: 10px;
+                margin-right: 15px;
+                width: 250px;
+                cursor: pointer; }
+              #modal .create-window.todo .categories .category .todo .progress p, #modal .create-window.todo .categories .category .add .progress p, #modal .create-window.todo .categories .add-category .todo .progress p, #modal .create-window.todo .categories .add-category .add .progress p {
+                float: left;
+                color: #FF7373;
+                font-size: 19px; }
+                #modal .create-window.todo .categories .category .todo .progress p span, #modal .create-window.todo .categories .category .add .progress p span, #modal .create-window.todo .categories .add-category .todo .progress p span, #modal .create-window.todo .categories .add-category .add .progress p span {
+                  margin-left: 10px;
+                  font-size: 22px; }
+          #modal .create-window.todo .categories .category .input, #modal .create-window.todo .categories .add-category .input {
+            overflow: hidden;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 7px; }
+            #modal .create-window.todo .categories .category .input input[type="text"], #modal .create-window.todo .categories .add-category .input input[type="text"] {
+              float: left;
+              padding-left: 5px;
+              width: 350px;
+              min-height: 30px;
+              font-size: 16px;
+              border-radius: 5px;
+              border: 1px solid #CCC; }
+            #modal .create-window.todo .categories .category .input .close, #modal .create-window.todo .categories .add-category .input .close {
+              display: block;
+              float: left;
+              margin-top: 10px;
+              margin-left: 7px;
+              width: 17px;
+              height: 17px;
+              background: url(../images/common/close.png) no-repeat;
+              background-position: 98% center; }
+              #modal .create-window.todo .categories .category .input .close:hover, #modal .create-window.todo .categories .add-category .input .close:hover {
+                opacity: 0.8;
+                cursor: pointer; }
+          #modal .create-window.todo .categories .category .add, #modal .create-window.todo .categories .add-category .add {
+            margin-bottom: 10px;
+            background: #CCC; }
+            #modal .create-window.todo .categories .category .add h3, #modal .create-window.todo .categories .add-category .add h3 {
+              padding-top: 8px;
+              padding-bottom: 12px;
+              text-align: center;
+              color: #777; }
+            #modal .create-window.todo .categories .category .add:hover, #modal .create-window.todo .categories .add-category .add:hover {
+              background: #AAA; }
+              #modal .create-window.todo .categories .category .add:hover h3, #modal .create-window.todo .categories .add-category .add:hover h3 {
+                color: white; }
+          #modal .create-window.todo .categories .category.green .title, #modal .create-window.todo .categories .add-category.green .title {
+            background: #008c8c; }
+          #modal .create-window.todo .categories .category.green .todo, #modal .create-window.todo .categories .add-category.green .todo {
+            background: #e4ffeb; }
+          #modal .create-window.todo .categories .category.orange .title, #modal .create-window.todo .categories .add-category.orange .title {
+            background: #ff7a4d; }
+          #modal .create-window.todo .categories .category.orange .todo, #modal .create-window.todo .categories .add-category.orange .todo {
+            background: #ffe8db; }
+          #modal .create-window.todo .categories .category.blue .title, #modal .create-window.todo .categories .add-category.blue .title {
+            background: #0085b2; }
+          #modal .create-window.todo .categories .category.blue .todo, #modal .create-window.todo .categories .add-category.blue .todo {
+            background: #eaf2ff; }
+        #modal .create-window.todo .categories .add-category {
+          display: block; }
+          #modal .create-window.todo .categories .add-category .title {
+            height: 67px;
+            background: #AAA;
+            border-radius: 10px; }
+            #modal .create-window.todo .categories .add-category .title h2 {
+              padding-top: 20px;
+              padding-left: 40px;
+              background-position: 28% 20px; }
+          #modal .create-window.todo .categories .add-category:hover {
+            cursor: pointer;
+            opacity: 0.7; }
+      #modal .create-window.todo .buttons {
+        padding: 20px;
+        padding-bottom: 40px;
+        border-top: 1px solid #999; }
