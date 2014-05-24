@@ -5,7 +5,7 @@ module.exports = (grunt) ->
     watch:
       coffee :
         files: 'src/*.coffee'
-        tasks: ['coffee:compile']
+        tasks: ['coffee:dist']
 
       sass:
         files: 'static/sass/*.scss'
@@ -13,7 +13,7 @@ module.exports = (grunt) ->
 
       jade:
         files: 'views/*.jade'
-        tasks: ['jade:compile']
+        tasks: ['jade:dist']
 
     exec:
       atom:
@@ -26,7 +26,7 @@ module.exports = (grunt) ->
           logConcurrentOutput: true
 
     jade:
-      compile:
+      dist:
         files:
           "static/html/index.html": ["views/index.jade"]
 
@@ -36,9 +36,11 @@ module.exports = (grunt) ->
           'static/css/style.css': 'static/sass/style.scss'
 
     coffee:
-      compile:
+      dist:
         files:
+          'static/js/gitodo.js': 'src/gitodo.coffee'
           'static/js/app.js': 'src/app.coffee'
+          'static/js/global-events.js': 'src/global-events.coffee'
 
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-contrib-watch'
@@ -48,4 +50,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-jade'
 
-  grunt.registerTask 'default', ['concurrent:dev']
+  grunt.registerTask 'compile', ['coffee:dist', 'sass:dist', 'jade:dist']
+
+  grunt.registerTask 'default', ['compile', 'concurrent:dev']

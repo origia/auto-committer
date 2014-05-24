@@ -20,7 +20,8 @@
       width: 800,
       height: 600
     });
-    mainWindow.loadUrl('file://' + __dirname + '/index.html');
+    mainWindow.loadUrl('file://' + __dirname + '/../html/index.html');
+    mainWindow.toggleDevTools();
     return mainWindow.on('closed', function() {
       return mainWindow = null;
     });

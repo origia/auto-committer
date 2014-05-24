@@ -1,0 +1,30 @@
+{
+  "name": "auto-committer",
+  "version": "0.1.0",
+  "homepage": "https://github.com/origia/auto-committer-nw",
+  "authors": [
+    "Daniel Perez <tuvistavie@gmail.com>"
+  ],
+  "description": "Auto Committer",
+  "main": "static/js/app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "node",
+    "git",
+    "atom-shell"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
