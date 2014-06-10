@@ -30,6 +30,6 @@
     "grunt-exec": "^0.4.5"
   },
   "dependencies": {
-    "auto-committer-backend": "git+https://github.com/origia/auto-committer-backend-nw.git#master"
+    "git-cli": "^0.1.0"
   }
 }
