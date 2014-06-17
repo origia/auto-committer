@@ -1,3 +1,0 @@
-Gitodo = {}
-
-module.exports = {}

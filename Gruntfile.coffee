@@ -3,17 +3,17 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON('package.json')
 
     watch:
-      coffee :
+      coffee:
         files: 'src/*.coffee'
         tasks: ['coffee:dist']
-
       sass:
         files: 'static/sass/*.scss'
         tasks: ['sass:dist']
-
       jade:
         files: 'views/*.jade'
         tasks: ['jade:dist']
+      options:
+        livereload: true
 
     exec:
       atom:
@@ -37,10 +37,11 @@ module.exports = (grunt) ->
 
     coffee:
       dist:
-        files:
-          'static/js/gitodo.js': 'src/gitodo.coffee'
-          'static/js/app.js': 'src/app.coffee'
-          'static/js/global-events.js': 'src/global-events.coffee'
+        expand: true
+        cwd: 'src'
+        src: ['**/*.coffee']
+        dest: 'static/js'
+        ext: '.js'
 
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-contrib-watch'
