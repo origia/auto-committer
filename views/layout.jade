@@ -4,9 +4,11 @@ html
     meta(charset="utf-8")
     title AutoCommitter
     script(src="../../bower_components/jquery/dist/jquery.min.js")
-    script(src="../js/browser/main.js")
+    script(src="../../bower_components/angular/angular.min.js")
     link(rel="stylesheet" href="../css/style.css")
 
+    script(src="../js/browser/main.js")
+
     script(src="http://localhost:35729/livereload.js")
-  body
+  body(ng-app="GitodoApp")
     block content

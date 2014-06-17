@@ -2,3 +2,23 @@ extends layout
 
 block content
   include common/main_header.jade
+
+  #main.main
+    #modal
+      .filter
+      .create-window
+        ul
+          li
+            p リポジトリ名：
+            input.repository(type="text" name="repository")
+          li
+            p ブックマーク名：
+            input.bookmark(type="text" name="bookmark")
+          li
+            p 保存先のパス：
+            input.path(type="text" name="path")
+        .buttons
+          input(type="submit" value="新規作成" disabled="disabled")
+          input(type="button" value="キャンセル")
+
+    include repositories/list

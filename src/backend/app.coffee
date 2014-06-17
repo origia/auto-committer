@@ -1,7 +1,6 @@
 app           = require 'app'
 BrowserWindow = require 'browser-window'
 
-
 exports.init = (onReady) ->
   require('crash-reporter').start()
   mainWindow = null

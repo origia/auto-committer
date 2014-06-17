@@ -4,13 +4,13 @@ module.exports = (grunt) ->
 
     watch:
       coffee:
-        files: 'src/*.coffee'
+        files: 'src/**/*.coffee'
         tasks: ['coffee:dist']
       sass:
         files: 'static/sass/*.scss'
         tasks: ['sass:dist']
       jade:
-        files: 'views/*.jade'
+        files: 'views/**/*.jade'
         tasks: ['jade:dist']
       options:
         livereload: true
