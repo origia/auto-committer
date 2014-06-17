@@ -27,8 +27,11 @@ module.exports = (grunt) ->
 
     jade:
       dist:
-        files:
-          "static/html/index.html": ["views/index.jade"]
+        expand: true
+        cwd: 'views'
+        src: ['**/*.jade']
+        dest: 'static/html'
+        ext: '.html'
 
     sass:
       dist:

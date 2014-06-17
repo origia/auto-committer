@@ -1,8 +1,9 @@
-.repositories(ng-controller="RepoCtrl")
-  a.rep(href="#" ng-repeat="repository in repos")
-    .title
-      h2= "{{repository.title}}"
-    .metadata
-      p.path= "{{repository.path}}"
-      p.percentage 進捗
-        span= "{{repository.progress}}%"
+extends ../layout
+
+block content
+  include ../common/main_header
+
+  #main.main
+    include create_modal
+
+    include list_p

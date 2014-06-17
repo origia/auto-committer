@@ -1,0 +1,63 @@
+#modal
+  .filter
+  .create-window.todo
+    .categories
+      .category.green
+        .title
+          h2 dev
+          a.edit(href="#")
+            .option-window
+              p カテゴリー名を編集
+              p このカテゴリーを削除
+        a.todo
+          input(type="checkbox")
+          h3 htmlの大枠をつくる
+        a.todo
+          input(type="checkbox")
+          h3 ヘッダーメニューをhtml/CSS化
+        a.todo
+          input(type="checkbox")
+          h3 メインビジュアルをhtml/CSS化
+        a.todo.selected
+          input(type="checkbox")
+          h3 フッターをhtml/CSS化
+          .progress
+            input#todoProgress(type="range", step="5", value="0")
+            p 進捗
+              span#showRangeArea 0
+              | %
+        a.todo
+          input(type="checkbox")
+          h3 協賛企業のリンクバナーを全てスポンサーエリアにいれる
+        .input
+          input(type="text")
+          a.close
+        a.add
+          h3 + ToDoを追加
+      .category.orange
+        .title
+          h2 design
+          a.edit(href="#")
+            .option-window
+              p カテゴリー名を編集
+              p このカテゴリーを削除
+        a.todo
+          input(type="checkbox")
+          h3 外観をPhotoshopでつくる
+        a.todo
+          input(type="checkbox")
+          h3 画像をimagesフォルダに全て書き出し
+        a.todo
+          input(type="checkbox")
+          h3 全ての画像を最適化して容量を減らす
+        a.todo
+          input(type="checkbox")
+          h3 協賛企業のリンクバナー制作
+        a.add
+          h3 + ToDoを追加
+      a.add-category(href="#")
+        .title
+          h2 + カテゴリーを追加
+    .buttons
+      input(type="submit", value="完了", disabled="disabled")
+      input(type="button", value="キャンセル")

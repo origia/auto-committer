@@ -1,0 +1,8 @@
+.repositories(ng-controller="RepoListCtrl")
+  a.rep(href="#" ng-repeat="repository in repos")
+    .title
+      h2= "{{repository.title}}"
+    .metadata
+      p.path= "{{repository.path}}"
+      p.percentage 進捗
+        span= "{{repository.progress}}%"

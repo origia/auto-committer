@@ -1,0 +1,12 @@
+table
+  tr(
+    ng-repeat="diff in fileDiff"
+    class="{{diff.type}}"
+  )
+    td(ng-if="diff.type != 'minus'")= "{{$index}}"
+    td
+    td(ng-if="diff.type == 'minus'")= "{{$index}}"
+    td(ng-if="diff.type == 'plus'") +
+    td(ng-if="diff.type == 'minus'") -
+    td(ng-if="diff.type == 'unchanged'")
+    td= "{{diff.text}}"

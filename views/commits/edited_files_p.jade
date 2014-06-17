@@ -1,0 +1,9 @@
+.files
+  a.file(
+    ng-class="{selected: $first}"
+    ng-repeat="file in editedFiles" ng-class-even="'even'"
+  )
+    .icon
+      img(ng-src="../../images/manage/icon-{{file.changeType}}.png" alt="")
+    p.name= "{{file.name}}"
+    p.path= "{{file.dirName}}"
