@@ -1,4 +1,4 @@
-app = require './app'
+app        = require './app'
 ipcHandler = require './ipc-handler'
 
 app.init (mainWindow) ->

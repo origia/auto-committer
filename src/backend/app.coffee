@@ -11,9 +11,8 @@ exports.init = (onReady) ->
 
   app.on 'ready', ->
     mainWindow = new BrowserWindow({width: 800, height: 600})
-    console.log __dirname + '/../../html/repositories/show.html'
 
-    mainWindow.loadUrl('file://' + __dirname + '/../../html/repositories/show.html')
+    mainWindow.loadUrl('file://' + __dirname + '/../../html/repositories/list.html')
     mainWindow.toggleDevTools()
 
     mainWindow.on 'closed', ->
