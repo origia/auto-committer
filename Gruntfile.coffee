@@ -1,5 +1,10 @@
 fs = require 'fs'
 
+if process.platform == 'darwin'
+  ATOM_PATH = './bin/Atom.app/Contents/MacOS/Atom'
+else
+  ATOM_PATH = './bin/atom'
+
 module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
@@ -19,7 +24,7 @@ module.exports = (grunt) ->
 
     exec:
       atom:
-        command: './bin/atom .'
+        command: ATOM_PATH + ' .'
 
     concurrent:
       dev:
@@ -63,7 +68,7 @@ module.exports = (grunt) ->
 
 
   grunt.registerTask 'fix-permissions', ->
-    fs.chmodSync './bin/atom', 0o755
+    fs.chmodSync ATOM_PATH, 0o755
 
   grunt.registerTask 'prepare', ['download-atom-shell', 'fix-permissions']
 
