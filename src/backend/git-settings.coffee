@@ -16,10 +16,11 @@ class GitSettings
     else
       process.env['HOME']
 
-  save: ->
+  save: (makeBackup=false) ->
     serializedConfig = ini.stringify(@config)
-    backupFile = @settingsFile + '.orig'
-    fs.copySync @settingsFile, backupFile
+    if makeBackup
+      backupFile = @settingsFile + '.orig'
+      fs.copySync @settingsFile, backupFile
     fs.writeFileSync @settingsFile, serializedConfig
 
 module.exports = GitSettings
