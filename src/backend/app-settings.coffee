@@ -7,11 +7,11 @@ BaseSettings = require './base-settings'
 
 CONFIG_FILE = path.join(__dirname, '..', '..', '..', 'config', 'settings.json')
 
-class Settings extends BaseSettings
+class AppSettings extends BaseSettings
   constructor: (@settingsFile=CONFIG_FILE) ->
     super @settingsFile
 
-  serialize: JSON.stringify
+  serialize: (s) -> JSON.stringify s, null, '  '
   deserialize: JSON.parse
 
   _extract: (value) ->
@@ -19,4 +19,4 @@ class Settings extends BaseSettings
     value.replace '$HOME', util.homeDir()
 
 
-module.exports = Settings
+module.exports = AppSettings
