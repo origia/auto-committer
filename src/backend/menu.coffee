@@ -1,6 +1,12 @@
 Menu = require 'menu'
 
 template = [
+  label: 'AutoCommitter'
+  submenu: [
+    label: '設定'
+    selector: 'settings:'
+  ]
+,
   label: 'プロジェクト'
   submenu: [
     label: '作成'
