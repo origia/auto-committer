@@ -7,7 +7,7 @@ module.exports = (grunt) ->
         files: 'src/**/*.coffee'
         tasks: ['coffee:dist']
       sass:
-        files: 'static/sass/*.scss'
+        files: 'static/sass/**/*.scss'
         tasks: ['sass:dist']
       jade:
         files: 'views/**/*.jade'

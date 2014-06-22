@@ -1,4 +1,5 @@
 Menu = require 'menu'
+modals = require './modals'
 
 exports.initMenu = (app) ->
   template = [
@@ -6,6 +7,7 @@ exports.initMenu = (app) ->
     submenu: [
       label: '設定'
       selector: 'settings:'
+      click: modals.openSettings
     ,
       label: '終了'
       accelerator: 'Command+Q',
