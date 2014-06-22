@@ -20,4 +20,4 @@ exports.init = (onReady) ->
 
     onReady(mainWindow)
 
-    require './menu'
+    require('./menu').initMenu(app)
