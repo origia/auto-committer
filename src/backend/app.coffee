@@ -19,3 +19,5 @@ exports.init = (onReady) ->
       mainWindow = null
 
     onReady(mainWindow)
+
+    require './menu'
