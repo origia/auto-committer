@@ -32,6 +32,7 @@
   "dependencies": {
     "fs-extra": "^0.9.1",
     "git-cli": "^0.1.0",
-    "ini": "^1.2.1"
+    "ini": "^1.2.1",
+    "underscore": "^1.6.0"
   }
 }

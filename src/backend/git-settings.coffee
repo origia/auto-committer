@@ -1,26 +1,18 @@
 fs      = require 'fs-extra'
 ini     = require 'ini'
 path    = require 'path'
+util    = require './util'
 
-class GitSettings
-  constructor: (@settingsFile) ->
-    @settingsFile = path.join(@homeDir(), '.gitconfig') unless @settingsFile?
-    @reload()
+DEFAULT_PATH = path.join(util.homeDir(), '.gitconfig')
 
-  reload: ->
-    @config = ini.parse fs.readFileSync(@settingsFile, 'utf-8')
+BaseSettings = require './base-settings'
 
-  homeDir: ->
-    if process.platform == 'win32'
-      process.env['USERPROFILE']
-    else
-      process.env['HOME']
+class GitSettings extends BaseSettings
+  constructor: (@settingsFile=DEFAULT_PATH) ->
+    super @settingsFile
 
-  save: (makeBackup=false) ->
-    serializedConfig = ini.stringify(@config)
-    if makeBackup
-      backupFile = @settingsFile + '.orig'
-      fs.copySync @settingsFile, backupFile
-    fs.writeFileSync @settingsFile, serializedConfig
+  serialize: ini.stringify
+  deserialize: ini.parse
+
 
 module.exports = GitSettings
