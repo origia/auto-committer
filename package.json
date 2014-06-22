@@ -30,6 +30,8 @@
     "grunt-exec": "^0.4.5"
   },
   "dependencies": {
-    "git-cli": "^0.1.0"
+    "fs-extra": "^0.9.1",
+    "git-cli": "^0.1.0",
+    "ini": "^1.2.1"
   }
 }
