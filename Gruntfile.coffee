@@ -1,3 +1,5 @@
+fs = require 'fs'
+
 module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
@@ -17,7 +19,7 @@ module.exports = (grunt) ->
 
     exec:
       atom:
-        command: 'atom-shell .'
+        command: './bin/atom .'
 
     concurrent:
       dev:
@@ -46,6 +48,10 @@ module.exports = (grunt) ->
         dest: 'static/js'
         ext: '.js'
 
+    'download-atom-shell':
+      version: '0.13.2'
+      outputDir: './bin'
+
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-exec'
@@ -53,6 +59,13 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-jade'
+  grunt.loadNpmTasks 'grunt-download-atom-shell'
+
+
+  grunt.registerTask 'fix-permissions', ->
+    fs.chmodSync './bin/atom', 0o755
+
+  grunt.registerTask 'prepare', ['download-atom-shell', 'fix-permissions']
 
   grunt.registerTask 'compile', ['coffee:dist', 'sass:dist', 'jade:dist']
 
