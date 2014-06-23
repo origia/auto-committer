@@ -288,8 +288,16 @@ header{
 				color: #00B2B2;
 				text-align: center;
 			}
+			.bar {
+				margin-top: -10px;
+				margin-bottom: 20px;
+				text-align: center;
+				progress {
+					width: 180px;
+				}
+			}
 			.todo {
-				margin-top: -15px;
+				margin-top: -25px;
 				font-size: 18px;
 				font-weight: bold;
 				color: #FF7373;
@@ -321,7 +329,7 @@ header{
 				letter-spacing: 1px;
 				span {
 					margin-left: 10px;
-					font-size: 25px;
+					font-size: 22px;
 					font-weight: bold;
 					color: #0085B2;
 				}
