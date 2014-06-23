@@ -7,8 +7,8 @@ $deep-blue: #0085B2;
 $light-green: #E4FFEB;
 $light-orange: #FFE8DB;
 $light-blue: #EAF2FF;
-$manage-top-height: 300px;
-$manage-bottom-height: 160px;
+$manage-top-height: 100%;
+//$manage-bottom-height: 160px;
 
 html, body, div, p, img, header, footer, nav, section, article, aside, figure, h1, h2, h3, h4, ul, li{
 	margin:0;
@@ -18,14 +18,16 @@ html, body, div, p, img, header, footer, nav, section, article, aside, figure, h
 	border:none;
 	box-shadow:none;
 }
-
 a {
 	text-decoration: none;
 }
 .center {
 	text-align: center;
 }
-
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
 body {
 	margin:0;
 	padding:0;
@@ -83,6 +85,7 @@ header{
 
 .main {
 	position: relative;
+	height: 100%;
 	a.rep {
 		display: block;
 		padding-top: 10px;
@@ -155,12 +158,12 @@ header{
 		}
 	}
 	.upper-area {
+		display: -webkit-box;
 		min-width: 750px;
 		height: $manage-top-height;
 		overflow: hidden;
 		.tree {
-			float: left;
-			width: 70%;
+			-webkit-box-flex: 1;
 			height: $manage-top-height;
 			background: #F0F2F6;
 			overflow: scroll;
@@ -270,44 +273,54 @@ header{
 			}
 		}
 		.progress {
-			float: right;
-			width: 30%;
+			padding: 10px;
+			width: 300px;
+			min-width: 270px;
+			max-width: 330px;
 			height: $manage-top-height;
 			background: #EFEFEF;
 			border-left: 1px solid #BBB;
 			box-sizing: border-box;
 			.percentage {
-				font-size: 80px;
+				padding-top: 30px;
+				font-size: 60px;
+				font-weight: bold;
 				color: #00B2B2;
 				text-align: center;
 			}
 			.todo {
 				margin-top: -15px;
-				font-size: 22px;
+				font-size: 18px;
+				font-weight: bold;
 				color: #FF7373;
 				text-align: center;
+				letter-spacing: 1px;
 				span {
-					font-size: 32px;
+					margin-left: 10px;
+					font-size: 27px;
 				}
 			}
 			.next {
 				margin: 0 auto;
-				margin-top: 10px;
-				padding: 10px;
-				width: 225px;
+				margin-top: 60px;
+				padding: 8px;
+				width: 92%;
 				font-size: 16px;
 				color: #535353;
 				background: #DDD;
 				border: 1px solid #CCC;
 				border-radius: 5px;
+				letter-spacing: 1px;
 			}
 			.will {
 				margin: 0 auto;
-				width: 230px;
+				margin-top: 10px;
 				font-size: 14px;
 				color: #535353;
-				text-align: right;
+				text-align: center;
+				letter-spacing: 1px;
 				span {
+					margin-left: 10px;
 					font-size: 25px;
 					font-weight: bold;
 					color: #0085B2;
@@ -315,6 +328,7 @@ header{
 			}
 		}
 	}
+	/*
 	.lower-area {
 		height: $manage-bottom-height;
 		overflow: hidden;
@@ -397,6 +411,7 @@ header{
 			}
 		}
 	}
+	*/
 }
 
 #modal {
