@@ -158,12 +158,13 @@ header{
 		}
 	}
 	.upper-area {
+		position: relative;
 		display: -webkit-box;
 		min-width: 750px;
 		height: $manage-top-height;
-		overflow: hidden;
 		.tree {
 			-webkit-box-flex: 1;
+			min-width: 550px;
 			height: $manage-top-height;
 			background: #F0F2F6;
 			overflow: scroll;
@@ -217,6 +218,7 @@ header{
 					z-index: 10;
 					p {
 						width: auto;
+						max-width: 280px;
 						padding: 5px;
 						padding-left: 9px;
 						padding-right: 9px;
@@ -259,6 +261,9 @@ header{
 						font-size: 14px;
 						color: #444;
 						line-height: 3.4em;
+					}
+					img {
+						padding-top: 2px;
 					}
 				}
 				.date {
