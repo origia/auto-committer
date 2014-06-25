@@ -1,6 +1,19 @@
 #modal
   .filter
   .create-window.todo
+    nav.task-type-area
+      a.task-type.current
+        | 全てのタスク
+        br
+        span (120)
+      a.task-type
+        | 未完了タスク
+        br
+        span (80)
+      a.task-type
+        | 完了タスク
+        br
+        span (40)
     .categories
       .category.green
         .title

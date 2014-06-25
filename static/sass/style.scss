@@ -158,14 +158,13 @@ header{
 		}
 	}
 	.upper-area {
-		position: relative;
 		display: -webkit-box;
 		min-width: 750px;
 		height: $manage-top-height;
 		.tree {
 			-webkit-box-flex: 1;
 			min-width: 550px;
-			height: $manage-top-height;
+			height: 100%;
 			background: #F0F2F6;
 			overflow: scroll;
 			.commit {
@@ -698,3 +697,44 @@ header{
 		}
 	}
 }
+
+.task-type-area {
+	margin: 0 auto;
+	width: 380px;
+	overflow: hidden;
+	.task-type {
+		display: block;
+		box-sizing: border-box;
+		float: left;
+		margin-right: -1px;
+		padding-top: 4px;
+		width: 130px;
+		height: 40px;
+		background: linear-gradient(#FFF 0%, #F5F5F5 100%);
+		border: 1px solid #CCC;
+		color: #545454;
+		font-size: 13px;
+		text-align: center;
+		line-height: 1.3em;
+		span {
+			clear: both;
+			color: #535353;
+			font-size: 11px;
+			font-weight: bold;
+		}
+		&:first-child {
+			border-radius: 8px 0 0 8px;
+		}
+		&:last-child {
+			border-radius: 0 8px 8px 0;
+		}
+		&.current {
+			background: linear-gradient(#DDD 0%, #EEE 100%);
+			color: #00B2B2;
+			span {
+				color: #00B2B2;
+			}
+		}
+	}
+}
+
