@@ -1,7 +1,7 @@
 fs      = require 'fs-extra'
 ini     = require 'ini'
 path    = require 'path'
-util    = require './util'
+util    = require './../backend/util'
 
 DEFAULT_PATH = path.join(util.homeDir(), '.gitconfig')
 

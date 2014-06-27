@@ -2,7 +2,7 @@
   "name": "auto-committer-nw",
   "version": "0.1.0",
   "description": "Auto Committer",
-  "main": "static/js/backend/gitodo.js",
+  "main": "static/js/gitodo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -34,6 +34,9 @@
     "fs-extra": "^0.9.1",
     "git-cli": "^0.1.0",
     "ini": "^1.2.1",
+    "requireindex": "^1.1.0",
+    "sequelize": "^1.7.9",
+    "sqlite3": "^2.2.3",
     "underscore": "^1.6.0"
   }
 }

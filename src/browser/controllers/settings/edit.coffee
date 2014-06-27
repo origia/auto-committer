@@ -1,10 +1,7 @@
-GitSettings = require '../../../backend/git-settings'
-AppSettings = require '../../../backend/app-settings'
+appSettings = require('../../../configuration/settings').app
+gitSettings = require('../../../configuration/settings').git
 
 settingsEditCtrl = ($scope) ->
-  gitSettings = new GitSettings()
-  appSettings = new AppSettings()
-
   $scope.user = gitSettings.get('user') ? {}
   $scope.user.name ?= ''
   $scope.user.email ?= ''
