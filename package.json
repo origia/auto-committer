@@ -34,9 +34,9 @@
     "fs-extra": "^0.9.1",
     "git-cli": "^0.1.0",
     "ini": "^1.2.1",
+    "nedb": "^0.10.5",
     "requireindex": "^1.1.0",
-    "sequelize": "^1.7.9",
-    "sqlite3": "^2.2.3",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "underscore.string": "^2.3.3"
   }
 }

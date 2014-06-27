@@ -1,9 +1,18 @@
-appSettings = require('./settings').app
-Sequelize   = require 'sequelize'
+_           = require 'underscore'
+Datastore   = require 'nedb'
 
-db = new Sequelize('auto_committer', null, null, {
-  dialect: 'sqlite'
-  storage: "#{appSettings.configDir}/app.db"
-})
+
+appSettings = require('./settings').app
+
+dataStores = [
+  'repositories'
+]
+
+db = {}
+
+_.each dataStores, (store) ->
+  db[store] = new Datastore(
+    filename: "#{appSettings.configDir}/#{store}.db"
+  )
 
 module.exports = db
