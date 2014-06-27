@@ -1,11 +1,9 @@
-appSettings = require('settings.coffee').app
+appSettings = require('./settings').app
 Sequelize   = require 'sequelize'
-
-require '../models'
 
 db = new Sequelize('auto_committer', null, null, {
   dialect: 'sqlite'
-  storage: "#{appSettings.configDir}"
+  storage: "#{appSettings.configDir}/app.db"
 })
 
 module.exports = db
