@@ -135,7 +135,7 @@ body {
 	}
 	.label-area {
 		width: 100%;
-		height: 29px;
+		height: 28px;
 		background: url(../images/common/label-area.png);
 		border-top: 1px solid #AAA;
 		border-bottom: 1px solid #AAA;
@@ -143,13 +143,23 @@ body {
 		font-size: 13px;
 		ul {
 			overflow: hidden;
+			a {
+				display: block;
+				color: #545454;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
 			li {
 				float: left;
 				line-height: 2.3em;
 				padding-left: 10px;
-				padding-right: 10px;
-				background: url(../images/common/label-area-line.png) no-repeat;
+				padding-right: 20px;
+				background: url(../images/common/label-area-arrow.png) no-repeat;
 				background-position: right center;
+				&.current-project {
+					background: none;
+				}
 			}
 		}
 	}
