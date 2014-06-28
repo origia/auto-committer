@@ -11,6 +11,8 @@ router = ($routeProvider) ->
     .when '/settings',
       templateUrl: '../settings/edit.html'
       controller: 'SettingsEditCtrl'
+    .when '/create-repo',
+      templateUrl: '../repositories/new.html'
     .otherwise
       redirectTo: '/repositories'
 
