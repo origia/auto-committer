@@ -1,11 +1,14 @@
 .create-window
-  ul
-    li
-      p 名前
-      input.repository(type="text" ng-model="name")
-    li
-      p URL
+  h1.setting-title プロジェクトの新規作成
+  h2.setting-description プロジェクトをさいしょからつくる場合は「名前」を入力して「新規作成」ボタンを押して下さい。
+  h2.setting-description すでにGitにあるプロジェクトをつづきから管理する場合は、「URL」を入力して「新規作成」ボタンを押して下さい。
+  ul.setting-area
+    li.setting-area-list
+      p 名前：
+      input.repository(type="text" ng-model="name" focused)
+    li.setting-area-list
+      p URL：
       input.bookmark(type="text" ng-model="url")
-  .buttons
+  .buttons-window-action
     input(type="submit" value="新規作成" ng-click="create()")
     input(type="button" value="キャンセル" ng-click="close()")
