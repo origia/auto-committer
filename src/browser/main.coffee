@@ -9,6 +9,7 @@ controllers = [
   'repositories/show'
   'repositories/new'
   'settings/edit'
+  'tasks/list'
 ]
 
 for c in controllers

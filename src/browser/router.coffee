@@ -8,6 +8,7 @@ router = ($routeProvider) ->
       controller: 'RepoShowCtrl'
     .when '/repositories/:id/tasks',
       templateUrl: '../tasks/edit.html'
+      controller: 'TaskListCtrl'
     .when '/settings',
       templateUrl: '../settings/edit.html'
       controller: 'SettingsEditCtrl'
