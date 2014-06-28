@@ -93,6 +93,13 @@ exports.initMenu = (app) ->
       accelerator: 'Alt+Command+I',
       click: ( -> BrowserWindow.getFocusedWindow().toggleDevTools() )
     ]
+  ,
+    label: 'ウインドウ'
+    submenu: [
+      label: '最小化',
+      accelerator: 'Command+M',
+      selector: 'performMiniaturize:'
+    ]
   ]
 
   menu = Menu.buildFromTemplate(template)
