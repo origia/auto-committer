@@ -1,11 +1,11 @@
 .story-progress
-  p.percentage 80%
+  p.percentage {{repoInfo.progress}}%
   p.bar
-    progress(max='100' value='80')
+    progress(max='100' value='{{repoInfo.progress}}')
   p.todo
     | タスク
-    span 96
-    | /120
+    span {{doneTasks.length}}
+    | /{{tasks.length}}
   p.next
     | 協賛企業のリンクバナーを全てスポンサーエリアにいれる
   p.will

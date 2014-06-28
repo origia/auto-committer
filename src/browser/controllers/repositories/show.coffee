@@ -1,39 +1,36 @@
+_ = require 'underscore'
+Repository = require('git-cli').Repository
+
 db = require '../../../configuration/database'
 
 repoShowCtrl = ($scope, $routeParams) ->
-  db.repositories.findOne {_id: $routeParams.id }, (err, doc) ->
-    $scope.$apply ->
-      $scope.repository = doc
 
-  $scope.editedFiles = [
-    changeType: 'change'
-    name: 'index.html'
-    dirName: 'app/assets'
-  ,
-    changeType: 'add'
-    name: 'style.css'
-    dirName: 'app/assets'
-  ,
-    changeType: 'delete'
-    name: 'test.html'
-    dirName: 'app/assets'
-  ,
-    changeType: 'change'
-    name: 'app.js'
-    dirName: 'app/assets'
-  ]
+  isAuto = (email) ->
+    # FIXME: hard coding
+    email == 'auto-committer@gmail.com'
 
-  $scope.fileDiff = [
-    { type: 'unchanged', text: '<!DOCTYPE html>' },
-    { type: 'unchanged', text: '<html>' },
-    { type: 'plus', text: '<head>' },
-    { type: 'plus', text: '<meta charset=”utf-8”>' },
-    { type: 'plus', text: '<meta http-equiv=”X-UA-Compatible” content=”IE=edge”>' },
-    { type: 'plus', text: '<title></title>' },
-    { type: 'plus', text: '<link rel=”stylesheet” href=””>' },
-    { type: 'plus', text: '<head>' },
-    { type: 'minus', text: '<body>' }
-  ]
+  loadTasks = ->
+    db.tasks.find { repository_id: $scope.repoInfo._id }, (err, docs) ->
+      $scope.$apply ->
+        $scope.tasks = docs
+        [$scope.doneTasks, $scope.pendingTasks] = _.partition($scope.tasks, (t) -> (t.done))
+
+  loadLogs = ->
+    $scope.repo.log
+      onSuccess: (commits) ->
+        $scope.$apply ->
+          $scope.commits = commits
+
+  loadRepository = ->
+    db.repositories.findOne {_id: $routeParams.id }, (err, doc) ->
+      $scope.$apply ->
+        $scope.repoInfo = doc
+        $scope.repo = new Repository($scope.repoInfo.path + '/.git')
+        loadTasks()
+        loadLogs()
+
+
+  loadRepository()
 
 angular.module('GitodoApp').controller 'RepoShowCtrl', [
   '$scope', '$routeParams', repoShowCtrl

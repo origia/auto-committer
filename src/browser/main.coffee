@@ -1,5 +1,6 @@
 angular.module 'GitodoApp', [
   'ngRoute'
+  'ui.gravatar'
 ]
 
 controllers = [
