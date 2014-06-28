@@ -1,8 +1,7 @@
-globalEvents = require '../../js/browser/global-events'
-
 angular.module 'GitodoApp', []
 
 controllers = [
+  'page'
   'repositories/list'
   'repositories/show'
   'settings/edit'
@@ -11,4 +10,3 @@ controllers = [
 for c in controllers
   require "../../js/browser/controllers/#{c}"
 
-globalEvents.setup window
