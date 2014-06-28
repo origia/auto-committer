@@ -823,12 +823,17 @@ body {
 				}
 			}
 			.task-memo {
-				width: 350px;
-				height: 150px;
+				box-sizing: border-box;
+				padding: 5px;
+				width: 420px;
+				height: 170px;
 				border: 10px solid #CCCCCC;
 				border-radius: 5px;
 				color: #535353;
 				font-size: 18px;
+				&:focus {
+					outline: none;
+				}
 			}
 			.close {
 				display: block;
