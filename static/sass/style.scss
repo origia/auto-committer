@@ -178,7 +178,7 @@ body {
 				padding-top: 15px;
 				padding-bottom: 15px;
 				overflow: hidden;
-				&.even {
+				&:nth-child(even) {
 					background: #DDFFE1;
 				}
 				.category {
