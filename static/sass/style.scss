@@ -60,26 +60,20 @@ body {
 			padding-top: 5px;
 		}
 		p {
-			margin-top: -5px;
+			margin-top: -2px;
 			font-size: 12px;
-			color: #444;
+			color: #DDD;
 		}
-		.create {
+		.nav-create, .nav-clone, .nav-story, .nav-task {
 			width: 211px;
 			height: 59px;
 			float: left;
 			cursor: pointer;
+			-webkit-transition: all 0.5s;
 			&:hover {
-				opacity: 0.7;
-			}
-		}
-		.clone {
-			width: 211px;
-			height: 59px;
-			float: left;
-			cursor: pointer;
-			&:hover {
-				opacity: 0.7;
+				p {
+					color: yellow;
+				}
 			}
 		}
 	}
