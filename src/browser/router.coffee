@@ -13,6 +13,7 @@ router = ($routeProvider) ->
       controller: 'SettingsEditCtrl'
     .when '/create-repo',
       templateUrl: '../repositories/new.html'
+      controller: 'RepoNewCtrl'
     .otherwise
       redirectTo: '/repositories'
 

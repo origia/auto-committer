@@ -2,10 +2,10 @@
   ul
     li
       p 名前
-      input.repository(type="text" name="repository")
+      input.repository(type="text" ng-model="name")
     li
       p URL
-      input.bookmark(type="text" name="bookmark")
+      input.bookmark(type="text" ng-model="url")
   .buttons
-    input(type="submit" value="新規作成" disabled="disabled")
-    input(type="button" value="キャンセル")
+    input(type="submit" value="新規作成" ng-click="create()")
+    input(type="button" value="キャンセル" ng-click="close()")
