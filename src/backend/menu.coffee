@@ -47,6 +47,37 @@ exports.initMenu = (app) ->
       accelerator: 'Command+W',
       selector: 'performClose:'
     ]
+  ,
+    label: '編集'
+    submenu: [
+      label: '取り消す',
+      accelerator: 'Command+Z',
+      selector: 'undo:'
+    ,
+      label: 'やり直す',
+      accelerator: 'Shift+Command+Z',
+      selector: 'redo:'
+    ,
+    {
+      type: 'separator'
+    }
+    ,
+      label: '切り取り',
+      accelerator: 'Command+X',
+      selector: 'cut:'
+    ,
+      label: 'コピー',
+      accelerator: 'Command+C',
+      selector: 'copy:'
+    ,
+      label: '貼り付け',
+      accelerator: 'Command+V',
+      selector: 'paste:'
+    ,
+      label: 'すべてを選択',
+      accelerator: 'Command+A',
+      selector: 'selectAll:'
+    ]
   ]
 
   menu = Menu.buildFromTemplate(template)
