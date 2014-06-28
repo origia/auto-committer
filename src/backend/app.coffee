@@ -12,12 +12,12 @@ exports.init = (onReady) ->
   app.on 'ready', ->
     mainWindow = new BrowserWindow({width: 800, height: 600})
 
-    mainWindow.loadUrl('file://' + __dirname + '/../../html/repositories/list.html')
+    mainWindow.loadUrl('file://' + __dirname + '/../../html/layout.html')
     mainWindow.toggleDevTools()
 
     mainWindow.on 'closed', ->
       mainWindow = null
 
-    onReady(mainWindow)
+    onReady mainWindow
 
     require('./menu').initMenu(app)

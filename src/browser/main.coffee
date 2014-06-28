@@ -1,4 +1,6 @@
-angular.module 'GitodoApp', []
+angular.module 'GitodoApp', [
+  'ngRoute'
+]
 
 controllers = [
   'page'
@@ -8,5 +10,6 @@ controllers = [
 ]
 
 for c in controllers
-  require "../../js/browser/controllers/#{c}"
+  require "../js/browser/controllers/#{c}"
 
+require "../js/browser/router"

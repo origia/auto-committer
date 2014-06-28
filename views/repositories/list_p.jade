@@ -1,5 +1,5 @@
 .repositories(ng-controller="RepoListCtrl")
-  a.rep(href="#" ng-repeat="repository in repos")
+  a.rep(href="#/repositories/{{repository._id}}" ng-repeat="repository in repos")
     .title
       h2= "{{repository.title}}"
     .metadata
