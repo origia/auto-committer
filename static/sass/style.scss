@@ -888,6 +888,9 @@ body {
 			color: white;
 		}
 	}
+	&:hover {
+		background: #98DADB;
+	}
 	input[type="checkbox"] {
 		float: left;
 		width: 15px;
