@@ -8,7 +8,8 @@ createModal = (name, path, dimensions) ->
   return if modals[name]?
   options = _.extend({'always-on-top': true}, dimensions)
   modal = new BrowserWindow(options)
-  modal.setMenu(new Menu())
+  unless process.platform == 'darwin'
+    modal.setMenu(new Menu())
   modal.loadUrl('file://' + __dirname + '/../../html/layouts/app.html')
   modal.webContents.on 'did-finish-load', ->
     modal.webContents.send 'change-page', path
