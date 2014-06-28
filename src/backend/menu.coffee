@@ -32,6 +32,21 @@ exports.initMenu = (app) ->
       accelerator: 'Command+Q',
       click: ( -> app.quit() )
     ]
+  ,
+    label: 'ファイル'
+    submenu: [
+      label: '新しいプロジェクトを作成',
+      accelerator: 'Command+N',
+      selector: 'createProject:'
+    ,
+    {
+      type: 'separator'
+    }
+    ,
+      label: 'ウインドウを閉じる',
+      accelerator: 'Command+W',
+      selector: 'performClose:'
+    ]
   ]
 
   menu = Menu.buildFromTemplate(template)
