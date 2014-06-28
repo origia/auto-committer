@@ -262,6 +262,12 @@ body {
 						}
 					}
 				}
+				&.auto {
+					.comment {
+						background: $deep-green;
+						color: white;
+					}
+				}
 				.user {
 					float: left;
 					margin-left: 20px;
@@ -462,7 +468,7 @@ body {
 		background: url(../images/common/bg-clicked.png);
 		border: 1px solid #BBB;
 		z-index: 30;
-		li{
+		li {
 			padding:5px;
 			margin-bottom: 10px;
 			margin-right: 5%;
