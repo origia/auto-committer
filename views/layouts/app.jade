@@ -1,5 +1,4 @@
-- var basePath = '../'
-block vars
+- var basePath = '../../'
 
 doctype html
 html
@@ -11,7 +10,7 @@ html
     script(src="#{basePath}../bower_components/angular-route/angular-route.min.js")
     link(rel="stylesheet" href="#{basePath}css/style.css")
 
-    script(src="../js/browser/main.js")
+    script(src="#{basePath}js/browser/main.js")
 
     script(src="http://localhost:35729/livereload.js")
   body(ng-app="GitodoApp" ng-controller="PageCtrl" ng-keypress="onKeypressed($event)")

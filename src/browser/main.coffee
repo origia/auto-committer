@@ -10,6 +10,6 @@ controllers = [
 ]
 
 for c in controllers
-  require "../js/browser/controllers/#{c}"
+  require "../../js/browser/controllers/#{c}"
 
-require "../js/browser/router"
+require "../../js/browser/router"

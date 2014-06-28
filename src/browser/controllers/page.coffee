@@ -1,6 +1,7 @@
 remote = require 'remote'
+ipc    = require 'ipc'
 
-pageCtrl = ($scope) ->
+pageCtrl = ($scope, $location) ->
 
   $scope.onKeypressed = (e) ->
     switch e.which
@@ -8,7 +9,13 @@ pageCtrl = ($scope) ->
       when 20 then remote.getCurrentWindow().toggleDevTools()
       else return
 
+  $scope.close = ->
+    remote.getCurrentWindow().close()
+
+  ipc.on 'change-page', (path) ->
+    $location.path path
+
 
 angular.module('GitodoApp').controller 'PageCtrl', [
-  '$scope', pageCtrl
+  '$scope', '$location', pageCtrl
 ]
