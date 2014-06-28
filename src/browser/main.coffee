@@ -6,6 +6,7 @@ controllers = [
   'page'
   'repositories/list'
   'repositories/show'
+  'repositories/new'
   'settings/edit'
 ]
 

@@ -1,26 +1,23 @@
+_             = require 'underscore'
 BrowserWindow = require 'browser-window'
+Menu          = require 'menu'
 
-settingsWindow   = null
-createRepoWindow = null
+modals = {}
+
+createModal = (name, path, dimensions) ->
+  return if modals[name]?
+  options = _.extend({'always-on-top': true}, dimensions)
+  modal = new BrowserWindow(options)
+  modal.setMenu(new Menu())
+  modal.loadUrl('file://' + __dirname + '/../../html/layouts/app.html')
+  modal.webContents.on 'did-finish-load', ->
+    modal.webContents.send 'change-page', path
+  modal.on 'closed', ->
+    modals[name] = null
+  modals[name] = modal
 
 exports.openSettings = ->
-  return unless settingsWindow == null
-  settingsWindow = new BrowserWindow({width: 600, height: 400, 'always-on-top': true})
-
-  settingsWindow.loadUrl('file://' + __dirname + '/../../html/layouts/app.html')
-  settingsWindow.webContents.on 'did-finish-load', ->
-    settingsWindow.webContents.send 'change-page', '/settings'
-
-  settingsWindow.on 'closed', ->
-    settingsWindow = null
+  createModal 'settings', '/settings', {width: 600, height: 400}
 
 exports.openCreateRepo = ->
-  return unless createRepoWindow == null
-  createRepoWindow = new BrowserWindow({width: 600, height: 400, 'always-on-top': true})
-
-  createRepoWindow.loadUrl('file://' + __dirname + '/../../html/layouts/app.html')
-  createRepoWindow.webContents.on 'did-finish-load', ->
-    createRepoWindow.webContents.send 'change-page', '/create-repo'
-
-  createRepoWindow.on 'closed', ->
-    createRepoWindow = null
+  createModal 'create-repo', '/create-repo', {width: 600, height: 400}
