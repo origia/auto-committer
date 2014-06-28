@@ -6,6 +6,6 @@
     .date
       p {{commit.date|date:'yyyy/MM/dd hh:mm'}}
     .user
-      img(gravatar-src="commit.email", alt="{{commit.author}}")
+      img(gravatar-src-once="commit.email", alt="{{commit.author}}")
     .comment
       p {{commit.subject}}
