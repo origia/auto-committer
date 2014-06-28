@@ -11,10 +11,9 @@ settingsEditCtrl = ($scope) ->
 
   $scope.save = ->
     gitSettings.save()
-    appSettings.set('workspace', $scope.workspace)
+    appSettings.set 'workspace', $scope.workspace
     appSettings.save()
     $scope.close()
-
 
 angular.module('GitodoApp').controller 'SettingsEditCtrl', [
   '$scope', settingsEditCtrl

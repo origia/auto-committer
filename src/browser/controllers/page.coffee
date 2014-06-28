@@ -1,7 +1,7 @@
 remote = require 'remote'
 ipc    = require 'ipc'
 
-pageCtrl = ($scope, $location) ->
+pageCtrl = ($scope, $location, $window) ->
 
   $scope.onKeypressed = (e) ->
     switch e.which
@@ -17,5 +17,5 @@ pageCtrl = ($scope, $location) ->
 
 
 angular.module('GitodoApp').controller 'PageCtrl', [
-  '$scope', '$location', pageCtrl
+  '$scope', '$location', '$window', pageCtrl
 ]

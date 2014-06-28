@@ -1,4 +1,4 @@
-.repositories(ng-controller="RepoListCtrl")
+.repositories
   a.rep(href="#/repositories/{{repository._id}}" ng-repeat="repository in repos")
     .title
       h2= "{{repository.title}}"
