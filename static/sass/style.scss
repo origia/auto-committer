@@ -706,6 +706,7 @@ body {
 
 .task-header {
 	width: 100%;
+	min-width: 910px;
 	height: 60px;
 	.task-type-area {
 		margin-top: 20px;
@@ -752,28 +753,43 @@ body {
 
 .tasks {
 	width: 100%;
+	min-width: 910px;
 	height: 100%;
+	overflow: hidden;
 	.task-list {
+		float: left;
 		width: 50%;
 		height: 100%;
 		overflow: scroll;
 	}
 	.task-detail {
+		box-sizing: border-box;
 		width: 50%;
-		height: 100%;
-		overflow: scroll;
-		.task-unselected {
-			padding-top: 150px;
-			font-size: 13px;
-			color: #545454;
-			text-align: center;
-			background: url(../images/common/close.png) no-repeat;
-			background-position: center left;
-			background-size: 122px 62px;
+		float: left;
+		padding-left: 30px;
+		border-left: 1px solid #CCC;
+		&.unselected {
+			display: none;
+			-webkit-box-flex: 100;
+			width: 50%;
+			height: 100%;
+			overflow: scroll;
+			p {
+				padding-top: 150px;
+				font-size: 13px;
+				color: #545454;
+				text-align: center;
+				background: url(../images/todo/arrow-tasks.png) no-repeat;
+				background-position: 0 80%;
+				background-size: 122px 62px;
+			}
 		}
 		&.selected {
 			position: relative;
+			float: left;
+			width: 450px;
 			.task-title {
+				padding-right: 40px;
 				color: $deep-green;
 				font-size: 20px;
 				font-weight: bold;
@@ -794,7 +810,7 @@ body {
 				input {
 					float: left;
 					margin-left: 10px;
-					width: 280px;
+					width: 70%;
 				}
 				p {
 					margin-left: 10px;
@@ -844,9 +860,12 @@ body {
 	background: $light-green;
 	border-radius: 5px;
 	border: 1px solid #CCC;
-	&:hover {
+	&.selected, &:hover {
+		background: $deep-green;
 		cursor: pointer;
-		background: #E4FFEB;
+		h3 {
+			color: white;
+		}
 	}
 	input[type="checkbox"] {
 		float: left;
@@ -864,14 +883,16 @@ body {
 	}
 }
 .task-input {
+	display: block;
 	overflow: hidden;
 	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 7px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
 	input[type="text"] {
 		float: left;
 		padding-left: 5px;
-		width: 350px;
+		width: 390px;
 		min-height: 30px;
 		font-size: 16px;
 		border-radius: 5px;

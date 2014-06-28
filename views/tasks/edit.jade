@@ -29,25 +29,25 @@ block content
           input(type="checkbox")
           h3 htmlの大枠をつくる
         .task-input
-          input(type="text")
-          a.close
+          input(type="text" placeholder="タスク...")
+          //- a.close
         a.task.task-add
-          h3 + ToDoを追加
-      section.task-detail
-        p.task-unselected
+          h3 + タスクを追加
+      section.task-detail.unselected
+        p
           | タスクをクリックして
           br
           | 詳細を表示
       section.task-detail.selected
         h1.task-title
-          | htmlの大枠をつくる
+          | htmlの大枠をつくるああああああああああああああああああああ
         h2.task-check 進捗
         .task-progress
           input#todoProgress(type="range", step="5", value="0")
           p#showRangeArea #{'0'}%
         h2.task-check メモ
-          textarea.task-memo
-            | headerからfooterまでhtmlをすべてつくる。HTML5でつくることに注意。
+        textarea.task-memo
+          | headerからfooterまでhtmlをすべてつくる。HTML5でつくることに注意。
         .close
     //- .categories
     //-   .category.green
