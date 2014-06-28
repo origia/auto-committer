@@ -14,6 +14,21 @@ exports.initMenu = (app) ->
       click: ( -> app.quit() )
     ]
   ,
+    label: '編集'
+    submenu: [
+      label: '切り取り',
+      accelerator: 'Command+X'
+      selector: 'cut:'
+    ,
+      label: 'コピー',
+      accelerator: 'Command+C'
+      selector: 'copy:'
+    ,
+      label: '貼り付け',
+      accelerator: 'Command+V'
+      selector: 'paste:'
+    ]
+  ,
     label: 'プロジェクト'
     submenu: [
       label: '作成'
