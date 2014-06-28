@@ -157,10 +157,11 @@ body {
 		display: -webkit-box;
 		min-width: 750px;
 		height: $manage-top-height;
-		.tree {
+		overflow: scroll;
+		.story-tree {
 			-webkit-box-flex: 1;
 			min-width: 550px;
-			height: 100%;
+			height: $manage-top-height;
 			background: #F0F2F6;
 			overflow: scroll;
 			.commit {
@@ -272,12 +273,11 @@ body {
 				}
 			}
 		}
-		.progress {
+		.story-progress {
 			padding: 10px;
 			width: 300px;
 			min-width: 270px;
 			max-width: 330px;
-			height: $manage-top-height;
 			background: #EFEFEF;
 			border-left: 1px solid #BBB;
 			box-sizing: border-box;
