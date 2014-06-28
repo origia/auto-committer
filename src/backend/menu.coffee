@@ -78,6 +78,21 @@ exports.initMenu = (app) ->
       accelerator: 'Command+A',
       selector: 'selectAll:'
     ]
+  ,
+    label: '表示'
+    submenu: [
+      label: '再表示',
+      accelerator: 'Command+R',
+      click: ( -> BrowserWindow.getFocusedWindow().reloadIgnoringCache() )
+    ,
+    {
+      type: 'separator'
+    }
+    ,
+      label: 'デベロッパーツールを開く',
+      accelerator: 'Alt+Command+I',
+      click: ( -> BrowserWindow.getFocusedWindow().toggleDevTools() )
+    ]
   ]
 
   menu = Menu.buildFromTemplate(template)
