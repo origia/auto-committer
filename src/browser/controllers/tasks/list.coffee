@@ -7,14 +7,23 @@ taskListCtrl = ($scope, $routeParams) ->
 
   $scope.currentTask = null
 
+  $scope.tasksType = 'all'
+
   updateCollections = ->
     [$scope.doneTasks, $scope.pendingTasks] = _.partition($scope.tasks, (t) -> (t.done))
 
   $scope.filterTasks = (type) ->
+    $scope.tasksType = type
     switch type
       when 'all' then $scope.tasks = $scope.allTasks
       when 'pending' then $scope.tasks = $scope.pendingTasks
       when 'done' then $scope.tasks = $scope.doneTasks
+
+
+  loadRepository = ->
+    db.repositories.findOne {_id: $routeParams.id }, (err, doc) ->
+      $scope.$apply ->
+        $scope.repoInfo = doc
 
   loadTasks = ->
     db.tasks.find { repository_id: repoId }, (err, tasks) ->
@@ -22,6 +31,8 @@ taskListCtrl = ($scope, $routeParams) ->
         $scope.allTasks = tasks
         $scope.tasks = $scope.allTasks
         updateCollections()
+        loadRepository()
+
 
   $scope.saveMemo = ->
     $scope.currentTask.memo = $scope.memoText
