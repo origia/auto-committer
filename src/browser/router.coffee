@@ -6,6 +6,8 @@ router = ($routeProvider) ->
     .when '/repositories/:id',
       templateUrl: 'repositories/show.html'
       controller: 'RepoShowCtrl'
+    .when '/repositories/:id/tasks',
+      templateUrl: 'tasks/edit.html'
     .otherwise
       redirectTo: '/repositories'
 

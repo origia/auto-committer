@@ -1,4 +1,10 @@
-repoShowCtrl = ($scope) ->
+db = require '../../../configuration/database'
+
+repoShowCtrl = ($scope, $routeParams) ->
+  db.repositories.findOne {_id: $routeParams.id }, (err, doc) ->
+    $scope.$apply ->
+      $scope.repository = doc
+
   $scope.editedFiles = [
     changeType: 'change'
     name: 'index.html'
@@ -30,5 +36,5 @@ repoShowCtrl = ($scope) ->
   ]
 
 angular.module('GitodoApp').controller 'RepoShowCtrl', [
-  '$scope', repoShowCtrl
+  '$scope', '$routeParams', repoShowCtrl
 ]

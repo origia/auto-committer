@@ -1,0 +1,106 @@
+.create-window.todo
+  header.task-header
+    nav.task-type-area
+      a.task-type.current
+        | 全てのタスク
+        br
+        span (120)
+      a.task-type
+        | 未完了タスク
+        br
+        span (80)
+      a.task-type
+        | 完了タスク
+        br
+        span (40)
+  main.tasks
+    section.task-list
+      - var i = 5
+      while i--
+        a.task
+          input(type="checkbox")
+          h3 htmlの大枠をつくる
+      a.task.selected
+        input(type="checkbox")
+        h3 htmlの大枠をつくる
+      .task-input
+        input(type="text")
+        a.close
+      a.task.task-add
+        h3 + ToDoを追加
+    section.task-detail
+      p.task-unselected
+        | タスクをクリックして
+        br
+        | 詳細を表示
+    section.task-detail.selected
+      h1.task-title
+        | htmlの大枠をつくる
+      h2.task-check 進捗
+      .task-progress
+        input#todoProgress(type="range", step="5", value="0")
+        p#showRangeArea #{'0'}%
+      h2.task-check メモ
+        textarea.task-memo
+          | headerからfooterまでhtmlをすべてつくる。HTML5でつくることに注意。
+      .close
+  //- .categories
+  //-   .category.green
+  //-     .title
+  //-       h2 dev
+  //-       a.edit(href="#")
+  //-         .option-window
+  //-           p カテゴリー名を編集
+  //-           p このカテゴリーを削除
+  //-     a.todo
+  //-       input(type="checkbox")
+  //-       h3 htmlの大枠をつくる
+  //-     a.todo
+  //-       input(type="checkbox")
+  //-       h3 ヘッダーメニューをhtml/CSS化
+  //-     a.todo
+  //-       input(type="checkbox")
+  //-       h3 メインビジュアルをhtml/CSS化
+  //-     a.todo.selected
+  //-       input(type="checkbox")
+  //-       h3 フッターをhtml/CSS化
+  //-       .progress
+  //-         input#todoProgress(type="range", step="5", value="0")
+  //-         p 進捗
+  //-           span#showRangeArea 0
+  //-           | %
+  //-     a.todo
+  //-       input(type="checkbox")
+  //-       h3 協賛企業のリンクバナーを全てスポンサーエリアにいれる
+  //-     .input
+  //-       input(type="text")
+  //-       a.close
+  //-     a.add
+  //-       h3 + ToDoを追加
+  //-   .category.orange
+  //-     .title
+  //-       h2 design
+  //-       a.edit(href="#")
+  //-         .option-window
+  //-           p カテゴリー名を編集
+  //-           p このカテゴリーを削除
+  //-     a.todo
+  //-       input(type="checkbox")
+  //-       h3 外観をPhotoshopでつくる
+  //-     a.todo
+  //-       input(type="checkbox")
+  //-       h3 画像をimagesフォルダに全て書き出し
+  //-     a.todo
+  //-       input(type="checkbox")
+  //-       h3 全ての画像を最適化して容量を減らす
+  //-     a.todo
+  //-       input(type="checkbox")
+  //-       h3 協賛企業のリンクバナー制作
+  //-     a.add
+  //-       h3 + ToDoを追加
+  //-   a.add-category(href="#")
+  //-     .title
+  //-       h2 + カテゴリーを追加
+  section.buttons
+    input(type="submit", value="完了", disabled="disabled")
+    input(type="button", value="キャンセル")

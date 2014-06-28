@@ -1,12 +1,15 @@
+- var basePath = '../'
+block vars
+
 doctype html
 html
   head
     meta(charset="utf-8")
     title AutoCommitter
-    script(src="../../bower_components/jquery/dist/jquery.min.js")
-    script(src="../../bower_components/angular/angular.min.js")
-    script(src="../../bower_components/angular-route/angular-route.min.js")
-    link(rel="stylesheet" href="../css/style.css")
+    script(src="#{basePath}../bower_components/jquery/dist/jquery.min.js")
+    script(src="#{basePath}../bower_components/angular/angular.min.js")
+    script(src="#{basePath}../bower_components/angular-route/angular-route.min.js")
+    link(rel="stylesheet" href="#{basePath}css/style.css")
 
     script(src="../js/browser/main.js")
 
