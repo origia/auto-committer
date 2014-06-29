@@ -35,6 +35,7 @@ taskListCtrl = ($scope, $routeParams) ->
 
 
   $scope.saveMemo = ->
+    return if _.isEmpty($scope.memoText)
     $scope.currentTask.memo = $scope.memoText
     db.tasks.update { _id: $scope.currentTask._id }, { $set: { memo: $scope.memoText } }
 
