@@ -892,6 +892,9 @@ body {
 	&:hover {
 		background: #98DADB;
 	}
+	&.selected:hover {
+		background: $deep-green;
+	}
 	input[type="checkbox"] {
 		float: left;
 		width: 15px;
