@@ -1,5 +1,6 @@
 ipc    = require 'ipc'
 modals = require './modals'
+dialog = require 'dialog'
 
 exports.setup = (mainWindow) ->
   ipc.on 'open-modal', (e, name) ->
@@ -8,3 +9,7 @@ exports.setup = (mainWindow) ->
 
   ipc.on 'refreshRepo', ->
     mainWindow.webContents.send 'refreshRepo'
+
+  ipc.on 'show-message-dialog', (evt, options) ->
+    dialog.showMessageBox mainWindow, options, (response) ->
+      evt.returnValue = response

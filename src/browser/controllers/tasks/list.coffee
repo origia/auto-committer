@@ -1,5 +1,7 @@
-_      = require 'underscore'
-db     = require '../../../configuration/database'
+ipc = require 'ipc'
+_   = require 'underscore'
+
+db  = require '../../../configuration/database'
 
 taskListCtrl = ($scope, $routeParams) ->
   $scope.tasks = []
@@ -10,7 +12,8 @@ taskListCtrl = ($scope, $routeParams) ->
   $scope.tasksType = 'all'
 
   updateCollections = ->
-    [$scope.doneTasks, $scope.pendingTasks] = _.partition($scope.tasks, (t) -> (t.done))
+    [$scope.doneTasks, $scope.pendingTasks] = _.partition($scope.allTasks, (t) -> (t.done))
+    $scope.filterTasks $scope.tasksType
 
   $scope.filterTasks = (type) ->
     $scope.tasksType = type
@@ -33,6 +36,25 @@ taskListCtrl = ($scope, $routeParams) ->
         updateCollections()
         loadRepository()
 
+  removeTask = (task) ->
+    $scope.allTasks = _.reject $scope.allTasks, ((t) -> t._id == task._id)
+    updateCollections()
+
+  $scope.tryRemoveTask = ($event, task) ->
+    $event.stopPropagation()
+    response = ipc.sendSync('show-message-dialog',
+      type: 'warning'
+      buttons: ['キャンセル', 'OK']
+      title: '確認'
+      message: 'このタスクを削除しますか？'
+    )
+    if response == 1
+      if $scope.currentTask == task
+        $scope.currentTask = null
+      db.tasks.remove { _id: task._id }
+      removeTask task
+    else
+      $scope.trySelectTask task
 
   $scope.saveMemo = ->
     return if _.isEmpty($scope.memoText)
