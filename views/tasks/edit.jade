@@ -22,7 +22,7 @@ block content
                 ng-keypress="trySubmit($event)"
                 ng-model="newTaskText"
           )
-        a.task.task-add
+        a.task-add
           h3 + タスクを追加
       div(ng-switch="currentTask")
         section.task-detail.unselected(ng-switch-when="null")
