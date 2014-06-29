@@ -2,6 +2,7 @@ ipc = require 'ipc'
 _   = require 'underscore'
 
 db  = require '../../../configuration/database'
+Repository = require('git-cli').Repository
 
 taskListCtrl = ($scope, $routeParams) ->
   $scope.tasks = []
@@ -27,6 +28,7 @@ taskListCtrl = ($scope, $routeParams) ->
     db.repositories.findOne {_id: $routeParams.id }, (err, doc) ->
       $scope.$apply ->
         $scope.repoInfo = doc
+        $scope.repo = new Repository($scope.repoInfo.path + '/.git')
 
   loadTasks = ->
     db.tasks.find { repository_id: repoId }, (err, tasks) ->
@@ -39,6 +41,29 @@ taskListCtrl = ($scope, $routeParams) ->
   removeTask = (task) ->
     $scope.allTasks = _.reject $scope.allTasks, ((t) -> t._id == task._id)
     updateCollections()
+
+
+  addAndCommit = (repository, message) ->
+    repository.add
+      onSuccess: ->
+        repository.commit message
+
+  commitProgress = (task, oldProgress, newProgress) ->
+    return unless $scope.repo?
+    # TODO: make commit message configurable
+    commitMessage = "タスク'#{task.content}'が#{oldProgress}%から#{newProgress}%に更新されました。"
+    $scope.repo.diffStats
+      onSuccess: (stats) ->
+        # TODO: make commit threshold configurable
+        if stats.insertions + stats.deletions > 5
+          addAndCommit $scope.repo, commitMessage
+        else
+          $scope.repo.status
+            onSuccess: (status) ->
+              hasNewFiles = _.find status, ((s) -> s.status == 'added')
+              if hasNewFiles?
+                addAndCommit $scope.repo, commitMessage
+
 
   $scope.tryRemoveTask = ($event, task) ->
     $event.stopPropagation()
@@ -67,8 +92,10 @@ taskListCtrl = ($scope, $routeParams) ->
     db.repositories.update { _id: $scope.repoInfo._id }, { $set: { progress: progress } }
 
 
+  # FIXME: spaghetti...
   $scope.updateTaskProgress = ($event, task, percentage, restore) ->
     $event.stopPropagation()
+    oldProgress = if task.done then 100 else task.oldProgress
     percentage = parseInt(percentage, 10)
     $scope.selectTask task
     if not restore
@@ -84,6 +111,7 @@ taskListCtrl = ($scope, $routeParams) ->
       updateTotalProgress()
       $scope.$apply ->
         updateCollections()
+        commitProgress task, oldProgress, task.progress
 
 
   $scope.trySubmit = (e) ->
