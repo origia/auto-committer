@@ -7,7 +7,7 @@ repoShowCtrl = ($scope, $routeParams) ->
 
   isAuto = (email) ->
     # FIXME: hard coding
-    email == 'auto-committer@gmail.com'
+    email == 'auto.committer@gmail.com'
 
   loadTasks = ->
     db.tasks.find { repository_id: $scope.repoInfo._id }, (err, docs) ->
