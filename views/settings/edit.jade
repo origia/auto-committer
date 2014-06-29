@@ -1,20 +1,19 @@
 .modal
-  h1.text.center 設定
-
-  .settings-group
-    h3 ユーザ設定
-    .row
-      label 名前
+  h1.setting-title ユーザー設定
+  h2.setting-description GitHubアカウントの名前とメールアドレスを入力してください。
+  ul.setting-area
+    li.setting-area-list-middle
+      p 名前：
       input(type="text", ng-model="user.name")
-
-    .row
-      label メールアドレス
+    li.setting-area-list-middle
+      p メールアドレス：
       input(type="text", ng-model="user.email")
-
-  .settings-group
-    h3 アプリ設定
-    .row
-      label プロジェクト保存先
+  h1.setting-title アプリ設定
+  h2.setting-description AutoCommitter のプロジェクトが保存されるローカルの場所を指定してください。
+  ul.setting-area
+    li.setting-area-list-long
+      p プロジェクト保存先：
       input(type="text", ng-model="workspace")
-
-  input(type="submit" value="保存" ng-click="save()")
+  .buttons-window-action
+    input(type="submit" value="保存" ng-click="save()")
+    input(type="button" value="キャンセル" ng-click="close()")

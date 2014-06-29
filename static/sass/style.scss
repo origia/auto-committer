@@ -956,6 +956,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 90%;
+	overflow: hidden;
 	input {
 		float: right;
 		margin-right: 10px;
@@ -964,7 +965,7 @@ body {
 }
 
 .setting-title {
-	margin-top: 20px;
+	margin-top: 30px;
 	margin-bottom: 5px;
 	margin-left: auto;
 	margin-right: auto;
@@ -1010,6 +1011,24 @@ body {
 			float: left;
 			padding: 2px;
 			width: 85%;
+		}
+	}
+	.setting-area-list-middle {
+		@extend .setting-area-list;
+		p {
+			width: 120px;
+		}
+		input {
+			width: 65%;
+		}
+	}
+	.setting-area-list-long {
+		@extend .setting-area-list;
+		p {
+			width: 150px;
+		}
+		input {
+			width: 60%;
 		}
 	}
 }
