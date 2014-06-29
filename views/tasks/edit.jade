@@ -9,7 +9,7 @@ block content
     main.tasks
       section.task-list
         .task(
-          ng-repeat="task in tasks|orderBy:'createdAt':true"
+          ng-repeat="task in tasks|orderBy:'createdAt'"
           ng-class="{selected: currentTask != null && currentTask._id == task._id}"
           ng-click="trySelectTask(task, $event)"
         )
