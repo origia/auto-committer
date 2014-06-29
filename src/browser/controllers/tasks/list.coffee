@@ -42,12 +42,11 @@ taskListCtrl = ($scope, $routeParams) ->
 
   $scope.tryRemoveTask = ($event, task) ->
     $event.stopPropagation()
-    response = ipc.sendSync('show-message-dialog',
+    response = ipc.sendSync 'show-message-dialog',
       type: 'warning'
       buttons: ['キャンセル', 'OK']
       title: '確認'
       message: 'このタスクを削除しますか？'
-    )
     if response == 1
       if $scope.currentTask == task
         $scope.currentTask = null
@@ -61,8 +60,16 @@ taskListCtrl = ($scope, $routeParams) ->
     $scope.currentTask.memo = $scope.memoText
     db.tasks.update { _id: $scope.currentTask._id }, { $set: { memo: $scope.memoText } }
 
+  updateTotalProgress = ->
+    total       = $scope.allTasks.length
+    progressSum = _.reduce $scope.allTasks, ((res, t) -> res + parseInt(t.progress, 10)), 0
+    progress = Math.floor(progressSum / total)
+    db.repositories.update { _id: $scope.repoInfo._id }, { $set: { progress: progress } }
+
+
   $scope.updateTaskProgress = ($event, task, percentage, restore) ->
     $event.stopPropagation()
+    percentage = parseInt(percentage, 10)
     $scope.selectTask task
     if not restore
       task.oldProgress = task.progress
@@ -74,6 +81,7 @@ taskListCtrl = ($scope, $routeParams) ->
     task.done = task.progress == 100
     newAttrs = _.pick(task, 'oldProgress', 'progress', 'done')
     db.tasks.update { _id: task._id }, { $set: newAttrs }, ->
+      updateTotalProgress()
       $scope.$apply ->
         updateCollections()
 
