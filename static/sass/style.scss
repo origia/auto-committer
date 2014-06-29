@@ -67,13 +67,27 @@ body {
 		.nav-create, .nav-clone, .nav-story a, .nav-task a {
 			display: block;
 			width: 211px;
-			height: 59px;
+			height: 75px;
 			float: left;
 			cursor: pointer;
 			-webkit-transition: all 0.5s;
 			&:hover {
 				p {
+					color: #FFFFBF;
+				}
+			}
+		}
+		.nav-story, .nav-task {
+			&.selected {
+				p {
 					color: yellow;
+					padding-bottom: 10px;
+					border-bottom: 6px solid yellow;
+				}
+				&:hover {
+					p {
+						color: yellow;
+					}
 				}
 			}
 		}
