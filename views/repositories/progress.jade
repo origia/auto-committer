@@ -6,8 +6,8 @@
     | タスク
     span {{doneTasks.length}}
     | /{{tasks.length}}
-  p.next
-    | 協賛企業のリンクバナーを全てスポンサーエリアにいれる
-  p.will
-    | を完了すると……
-    span 85%
+  div(ng-if="nextTask != null")
+    p.next {{nextTask.content}}
+    p.will
+      | を完了すると……
+      span {{nextProgress}}%
