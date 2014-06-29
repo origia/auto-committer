@@ -720,7 +720,7 @@ body {
 
 .task-header {
 	width: 100%;
-	min-width: 910px;
+	min-width: 850px;
 	height: 60px;
 	.task-type-area {
 		margin-top: 20px;
@@ -798,16 +798,20 @@ body {
 		&.selected {
 			position: relative;
 			float: left;
-			width: 420px;
+			width: 50%;
+			min-width: 420px;
 			.task-title {
-				padding-right: 40px;
+				margin-top: 5px;
+				margin-bottom: 20px;
+				padding-right: 50px;
 				color: $deep-green;
 				font-size: 20px;
 				font-weight: bold;
 				text-align: center;
 			}
 			.task-check {
-				margin: 10px auto;
+				margin-top: 10px;
+				margin-bottom: 10px;
 				padding-left: 25px;
 				width: 380px;
 				color: #FF7272;
@@ -850,7 +854,7 @@ body {
 				display: block;
 				position: absolute;
 				top: 5px;
-				right: 5px;
+				right: 25px;
 				width: 17px;
 				height: 17px;
 				background: url(../images/common/close.png) no-repeat;
@@ -896,8 +900,9 @@ body {
 	}
 	h3 {
 		float: left;
-		margin-left: 10px;
-		width: 346px;
+		margin-top: -1px;
+		margin-left: 5px;
+		width: 90%;
 		color: #555;
 		font-size: 16px;
 		font-weight: normal;
