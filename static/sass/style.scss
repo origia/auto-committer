@@ -842,11 +842,14 @@ body {
 				box-sizing: border-box;
 				padding: 5px;
 				width: 95%;
+				max-width: 95%;
 				height: 170px;
+				max-height: 170px;
 				border: 10px solid #CCCCCC;
 				border-radius: 5px;
 				color: #535353;
 				font-size: 18px;
+				resize: none;
 				&:focus {
 					outline: none;
 				}
