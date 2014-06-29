@@ -64,7 +64,8 @@ body {
 			font-size: 12px;
 			color: #DDD;
 		}
-		.nav-create, .nav-clone, .nav-story, .nav-task {
+		.nav-create, .nav-clone, .nav-story a, .nav-task a {
+			display: block;
 			width: 211px;
 			height: 59px;
 			float: left;
