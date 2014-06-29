@@ -5,6 +5,9 @@ exports.initMenu = (app) ->
   template = [
     label: 'AutoCommitter'
     submenu: [
+      label: 'AutoCommitter について',
+      selector: 'orderFrontStandardAboutPanel:'
+    ,
       label: '環境設定…'
       accelerator: 'Command+,',
       selector: 'settings:',
