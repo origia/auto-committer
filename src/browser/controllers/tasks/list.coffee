@@ -5,6 +5,7 @@ db  = require '../../../configuration/database'
 Repository = require('git-cli').Repository
 
 taskListCtrl = ($scope, $routeParams) ->
+  $scope.page = 'tasks-list'
   $scope.tasks = []
   repoId = $routeParams.id
 

@@ -5,6 +5,7 @@ db = require '../../../configuration/database'
 
 repoShowCtrl = ($scope, $routeParams) ->
   $scope.nextTask = null
+  $scope.page = 'commits-list'
 
   isAuto = (email) ->
     # FIXME: hard coding
