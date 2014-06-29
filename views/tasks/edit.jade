@@ -15,7 +15,7 @@ block content
         )
           input(type="checkbox" ng-click="updateTaskProgress($event, task, 100, true)" ng-model="task.done")
           h3 {{task.content}}
-
+          .task-delete(onclick="confirm('このタスクを削除しますか？')")
         .task-input
           input(type="text"
                 placeholder="タスク..."
