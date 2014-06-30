@@ -1,8 +1,11 @@
-.repositories
-  a.rep(ui-sref="repository.commits({id: repository._id})" ng-repeat="repository in repos")
-    .title
-      h2= "{{repository.title}}"
-    .metadata
-      p.path= "{{repository.path}}"
-      p.percentage 進捗
-        span= "{{repository.progress}}%"
+.repo-container(ng-switch="repos.length")
+  .no-repositories(ng-switch-when="0")
+    p レポジトリ追加してね！
+  .repositories(ng-switch-default="")
+    a.rep(ui-sref="repository.commits({id: repository._id})" ng-repeat="repository in repos")
+      .title
+        h2= "{{repository.title}}"
+      .metadata
+        p.path= "{{repository.path}}"
+        p.percentage 進捗
+          span= "{{repository.progress}}%"
