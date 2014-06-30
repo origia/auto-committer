@@ -29,7 +29,6 @@ repoShowCtrl = ($scope, $stateParams, repository, tasks) ->
   $scope.updateTasks = ->
     [$scope.doneTasks, $scope.pendingTasks] = _.partition($scope.allTasks, (t) -> (t.done))
 
-
   $scope.updateTasks()
 
 

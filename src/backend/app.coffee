@@ -13,7 +13,6 @@ exports.init = (onReady) ->
     mainWindow = new BrowserWindow({width: 1000, height: 750, resizable: false})
 
     mainWindow.loadUrl('file://' + __dirname + '/../../html/layouts/app.html')
-    mainWindow.toggleDevTools()
 
     mainWindow.on 'closed', ->
       mainWindow = null
