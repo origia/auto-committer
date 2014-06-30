@@ -1,0 +1,15 @@
+.story-progress
+  p.percentage {{repoInfo.progress}}%
+  p.bar
+    progress(max='100' value='{{repoInfo.progress}}')
+  p.todo
+    | タスク
+    span {{doneTasks.length}}
+    | /{{tasks.length}}
+  div(ng-if="nextTask != null")
+    p.next {{nextTask.content}}
+    p.will
+      | を完了すると……
+      span {{nextProgress}}%
+  .option
+    p.open-finder このプロジェクトをFinderで開く
