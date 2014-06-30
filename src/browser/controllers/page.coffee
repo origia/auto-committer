@@ -16,17 +16,17 @@ pageCtrl = ($scope, $location, $window) ->
     remote.getCurrentWindow().close()
 
   $scope.openDir = (fullPath) ->
+    isFile = fs.statSync(fullPath).isFile()
     [command, args] = switch process.platform
       when 'darwin'
-        ['open', ['-R', fullPath]]
+        args = if isFile then [fullPath, "-R"] else [fullPath]
+        ['open', args]
       when 'win32', 'win64'
         ['explorer', [fullPath]]
       else
-        fullPath = path.dirname(fullPath) if fs.statSync(fullPath).isFile()
+        fullPath = path.dirname(fullPath) if isFile
         ['xdg-open', [fullPath]]
     spawn command, args
-
-
 
   ipc.on 'change-page', (fullPath) ->
     $location.path fullPath
