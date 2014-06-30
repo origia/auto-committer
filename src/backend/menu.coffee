@@ -1,5 +1,6 @@
-Menu = require 'menu'
-modals = require './modals'
+Menu          = require 'menu'
+BrowserWindow = require 'browser-window'
+modals        = require './modals'
 
 exports.initMenu = (app) ->
   template = [
