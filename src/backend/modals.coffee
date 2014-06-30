@@ -21,4 +21,4 @@ exports.openSettings = ->
   createModal 'settings', '/settings', {width: 600, height: 400, resizable: false}
 
 exports.openCreateRepo = ->
-  createModal 'create-repo', '/create-repo', {width: 600, height: 250, resizable: false}
+  createModal 'create-repo', '/create-repo', {width: 600, height: 400, resizable: false}
