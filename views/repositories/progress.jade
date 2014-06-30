@@ -11,3 +11,6 @@
     p.will
       | を完了すると……
       span {{nextProgress}}%
+
+  .open
+    button(ng-click="openDir(repoInfo.path)") {{openText}}

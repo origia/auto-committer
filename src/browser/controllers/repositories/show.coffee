@@ -1,11 +1,16 @@
-_ = require 'underscore'
-Repository = require('git-cli').Repository
+_          = require 'underscore'
 
-db = require '../../../configuration/database'
+Repository = require('git-cli').Repository
+db         = require '../../../configuration/database'
+
 
 repoShowCtrl = ($scope, $routeParams) ->
   $scope.nextTask = null
   $scope.page = 'commits-list'
+
+  $scope.openText = switch process.platform
+    when 'darwin' then 'Open in finder'
+    else 'Open directory'
 
   isAuto = (email) ->
     # FIXME: hard coding
@@ -17,7 +22,7 @@ repoShowCtrl = ($scope, $routeParams) ->
     taskIndex = Math.floor(Math.random() * n)
     $scope.nextTask = $scope.pendingTasks[taskIndex]
     taskValue = Math.round((100 - $scope.nextTask.progress) / $scope.tasks.length)
-    $scope.nextProgress = $scope.repoInfo.progress + taskValue
+    $scope.nextProgress = Math.min($scope.repoInfo.progress + taskValue, 100)
 
   loadTasks = ->
     db.tasks.find { repository_id: $scope.repoInfo._id }, (err, docs) ->
