@@ -10,7 +10,7 @@ exports.init = (onReady) ->
       app.quit()
 
   app.on 'ready', ->
-    mainWindow = new BrowserWindow({width: 800, height: 600})
+    mainWindow = new BrowserWindow({width: 1000, height: 750, resizable: false})
 
     mainWindow.loadUrl('file://' + __dirname + '/../../html/layouts/app.html')
 

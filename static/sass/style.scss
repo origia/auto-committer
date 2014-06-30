@@ -32,7 +32,7 @@ html, body {
 body {
 	margin:0;
 	padding:0;
-	min-width: 520px;
+	min-width: 600px;
 	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	font-weight:normal;
 	font-size:20px;
@@ -182,8 +182,8 @@ body {
 	.upper-area {
 		display: -webkit-box;
 		min-width: 750px;
-		height: 500px; // 動的にwindowの大きさ - ナビゲーションの大きさ - パンくずの大きさにする
-		max-height: 500px;
+		height: 620px; // 動的にwindowの大きさ - ナビゲーションの大きさ - パンくずの大きさにする
+		max-height: 620px;
 		overflow-y: scroll;
 		.story-tree {
 			-webkit-box-flex: 1;
