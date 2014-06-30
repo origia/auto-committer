@@ -42,6 +42,7 @@ exports.initMenu = (app) ->
       label: '新しいプロジェクトを作成',
       accelerator: 'Command+N',
       selector: 'createProject:'
+      click: modals.openCreateRepo
     ,
     {
       type: 'separator'
