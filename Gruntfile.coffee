@@ -66,6 +66,9 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-download-atom-shell'
 
+  grunt.registerTask 'prepare-if-needed', 'Prepare installation if not ready', ->
+    unless fs.existsSync ATOM_PATH
+      grunt.task.run 'prepare'
 
   grunt.registerTask 'fix-permissions', ->
     fs.chmodSync ATOM_PATH, 0o755
@@ -74,4 +77,4 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'compile', ['coffee:dist', 'sass:dist', 'jade:dist']
 
-  grunt.registerTask 'default', ['compile', 'concurrent:dev']
+  grunt.registerTask 'default', ['compile', 'prepare-if-needed', 'concurrent:dev']
