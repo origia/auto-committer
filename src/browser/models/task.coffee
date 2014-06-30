@@ -22,11 +22,11 @@ class Task
     attrs = _.pick this, Task.fields...
     if @_id
       db.tasks.update { _id: @_id}, { $set: attrs }, (err, task) =>
-        callback(err, task) if callback?
+        callback(err, this) if callback?
     else
       db.tasks.insert attrs, (err, task) =>
         @_id = task._id
-        callback(err, task) if callback?
+        callback(err, this) if callback?
 
   updateProgress: (percentage, callback) =>
     doBackup = percentage != 100

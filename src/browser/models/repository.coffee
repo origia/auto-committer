@@ -40,12 +40,14 @@ class Repository extends Repo
         @commit message, { cli: cli }
 
   updateTotalProgress: (tasks) ->
-    total       = tasks.pending.length + tasks.done.length
-    pendingSum = _.reduce tasks.pending, (res, t) ->
+    tasksNumber = tasks.pending.length + tasks.done.length
+    return 0 if tasksNumber == 0
+    pendingSum  = _.reduce tasks.pending, (res, t) ->
       res + parseInt(t.progress, 10)
     , 0
+
     progressSum = pendingSum + tasks.done.length * 100
-    @progress = Math.floor(progressSum / total)
+    @progress   = Math.floor(progressSum / tasksNumber)
     db.repositories.update { _id: @_id }, { $set: { progress: @progress } }
 
 
