@@ -2,10 +2,10 @@ header.main-header
   //- h1 auto-committer-nw
   nav
     .nav-story(ng-class="{selected: page == 'commits-list'}")
-      a(href="#/repositories/{{repoInfo._id}}")
+      a(ui-sref="repository.commits({id: repository._id})")
         img(src="../../images/manage/nav-story.png")
         p ストーリー
     .nav-task(ng-class="{selected: page == 'tasks-list'}")
-      a(href="#/repositories/{{repoInfo._id}}/tasks")
+      a(ui-sref="repository.tasks({id: repository._id})")
         img(src="../../images/manage/nav-todo.png")
         p タスク

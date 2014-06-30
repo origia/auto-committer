@@ -27,28 +27,14 @@ taskListCtrl = ($scope, $stateParams) ->
     _.each ['pending', 'done'], (type) ->
       $scope.tasks[type] = _.reject $scope.tasks[type], ((t) -> t._id == task._id)
     updateCollections()
-
-  addAndCommit = (repository, message) ->
-    repository.add
-      onSuccess: ->
-        repository.commit message
+    $scope.repository.updateTotalProgress($scope.tasks)
 
   commitProgress = (task, oldProgress, newProgress) ->
-    return unless $scope.repo?
     # TODO: make commit message configurable
     commitMessage = "タスク'#{task.content}'が#{oldProgress}%から#{newProgress}%に更新されました。"
-    $scope.repo.diffStats
-      onSuccess: (stats) ->
-        # TODO: make commit threshold configurable
-        if stats.insertions + stats.deletions > 5
-          addAndCommit $scope.repo, commitMessage
-        else
-          $scope.repo.status
-            onSuccess: (status) ->
-              hasNewFiles = _.find status, ((s) -> s.status == 'added')
-              if hasNewFiles?
-                addAndCommit $scope.repo, commitMessage
 
+    $scope.repository.execIfChangedEnough 5, ->
+      $scope.repository.backup commitMessage
 
   $scope.tryRemoveTask = ($event, task) ->
     $event.stopPropagation()
@@ -65,24 +51,15 @@ taskListCtrl = ($scope, $stateParams) ->
     $scope.currentTask.memo = $scope.memoText
     $scope.currentTask.save()
 
-  updateTotalProgress = ->
-    total       = $scope.tasks.pending.length + $scope.tasks.done.length
-    progressSum = _.reduce($scope.tasks.pending, ((res, t) -> res + parseInt(t.progress, 10)), 0) + ($scope.tasks.done.length * 100)
-    progress = Math.floor(progressSum / total)
-    db.repositories.update { _id: $scope.repoInfo._id }, { $set: { progress: progress } }
-
-
   $scope.updateTaskProgress = ($event, task, percentage, restore) ->
     $event.stopPropagation()
     oldProgress = if task.done then 100 else task.oldProgress
-    percentage = parseInt(percentage, 10)
     $scope.selectTask task
-    task.updateProgress percentage, ->
-      updateTotalProgress()
+    task.updateProgress parseInt(percentage, 10), ->
       $scope.$apply ->
         updateCollections()
+        $scope.repository.updateTotalProgress($scope.tasks)
         commitProgress task, oldProgress, task.progress
-
 
   $scope.trySubmit = (e) ->
     $scope.saveTask() if e.which == 13
@@ -110,6 +87,7 @@ taskListCtrl = ($scope, $stateParams) ->
       $scope.$apply ->
         $scope.tasks.pending.push task
         $scope.newTaskText = ''
+        $scope.repository.updateTotalProgress($scope.tasks)
 
 
 angular.module('GitodoApp').controller 'TaskListCtrl', [

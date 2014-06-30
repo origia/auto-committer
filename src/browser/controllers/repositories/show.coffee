@@ -5,8 +5,7 @@ db         = require '../../../configuration/database'
 
 
 repoShowCtrl = ($scope, $stateParams, repository, tasks) ->
-  $scope.repoInfo = repository.info
-  $scope.repo = repository.obj
+  $scope.repository = repository
   $scope.tasks = tasks
 
   $scope.nextTask = null

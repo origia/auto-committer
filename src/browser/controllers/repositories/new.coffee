@@ -19,6 +19,7 @@ repoNewCtrl = ($scope) ->
     options = { onSuccess: onCreateSuccess }
     repoPath = path.join appSettings.get('workspace'), $scope.name
     if $scope.url? && !_.isEmpty($scope.url)
+      $scope.loading = true
       Repository.clone $scope.url, repoPath, options
     else
       Repository.init repoPath, options

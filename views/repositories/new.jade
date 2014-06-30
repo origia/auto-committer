@@ -18,5 +18,5 @@
       p URL：
       input.bookmark(type="text" ng-model="url")
   .buttons-window-action
-    input(type="submit" value="新規作成" ng-click="create()")
+    input(type="submit" value="新規作成" ng-click="create()" ng-disabled="loading")
     input(type="button" value="キャンセル" ng-click="close()")

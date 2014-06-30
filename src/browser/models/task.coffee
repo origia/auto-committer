@@ -1,7 +1,6 @@
 _   = require 'underscore'
 db  = require '../../configuration/database'
 
-
 class Task
   @fields = ['content', 'oldProgress', 'progress', 'memo', 'createdAt', 'done', 'repository_id']
 
@@ -18,7 +17,6 @@ class Task
     _.each args, (v, k) =>
       this[k] = v
     throw new Error('needs repository id') unless @repository_id?
-
 
   save: (callback) ->
     attrs = _.pick this, Task.fields...

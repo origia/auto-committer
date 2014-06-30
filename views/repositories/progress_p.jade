@@ -1,7 +1,7 @@
 .story-progress
-  p.percentage {{repoInfo.progress}}%
+  p.percentage {{repository.progress}}%
   p.bar
-    progress(max='100' value='{{repoInfo.progress}}')
+    progress(max='100' value='{{repository.progress}}')
   p.todo
     | タスク
     span {{tasks.done.length}}
@@ -13,4 +13,4 @@
       span {{next.progress}}%
 
   .open
-    button(ng-click="openDir(repoInfo.path)") {{openText}}
+    button(ng-click="openDir(repository.path)") {{openText}}
