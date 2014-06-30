@@ -18,7 +18,7 @@ createModal = (name, path, dimensions) ->
   modals[name] = modal
 
 exports.openSettings = ->
-  createModal 'settings', '/settings', {width: 600, height: 400}
+  createModal 'settings', '/settings', {width: 600, height: 400, resizable: false}
 
 exports.openCreateRepo = ->
-  createModal 'create-repo', '/create-repo', {width: 600, height: 400}
+  createModal 'create-repo', '/create-repo', {width: 600, height: 250, resizable: false}
