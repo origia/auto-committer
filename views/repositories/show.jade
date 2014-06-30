@@ -1,10 +1,5 @@
-block content
-  include ../common/manage_header
+include ../common/manage_header
 
-  main#main.main
-    include ../commits/list_header
-
-    .upper-area
-      include ../commits/list
-
-      include progress
+main#main.main
+  include ../commits/list_header
+  div(ui-view="")

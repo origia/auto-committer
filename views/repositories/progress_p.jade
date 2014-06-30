@@ -4,13 +4,13 @@
     progress(max='100' value='{{repoInfo.progress}}')
   p.todo
     | タスク
-    span {{doneTasks.length}}
-    | /{{tasks.length}}
-  div(ng-if="nextTask != null")
-    p.next {{nextTask.content}}
+    span {{tasks.done.length}}
+    | /{{getTasks().length}}
+  div(ng-if="next.task != null")
+    p.next {{next.task.content}}
     p.will
       | を完了すると……
-      span {{nextProgress}}%
+      span {{next.progress}}%
 
   .open
     button(ng-click="openDir(repoInfo.path)") {{openText}}

@@ -2,25 +2,25 @@ header.task-header
   nav.task-type-area
     a.task-type(
       href="javascript:void(0)"
-      ng-click="filterTasks('all')"
+      ng-click="tasksType = 'all'"
       ng-class="{current: tasksType == 'all'}"
     )
       | 全てのタスク
       br
-      span ({{allTasks.length}})
+      span ({{tasks.pending.length + tasks.done.length}})
     a.task-type(
       href="javascript:void(0)"
-      ng-click="filterTasks('pending')"
+      ng-click="tasksType = 'pending'"
       ng-class="{current: tasksType == 'pending'}"
     )
       | 未完了タスク
       br
-      span ({{pendingTasks.length}})
+      span ({{tasks.pending.length}})
     a.task-type(
       href="javascript:void(0)"
-      ng-click="filterTasks('done')"
+      ng-click="tasksType = 'done'"
       ng-class="{current: tasksType == 'done'}"
     )
       | 完了タスク
       br
-      span ({{doneTasks.length}})
+      span ({{tasks.done.length}})

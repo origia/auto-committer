@@ -1,6 +1,7 @@
 angular.module 'GitodoApp', [
   'ngRoute'
   'ui.gravatar'
+  'ui.router'
 ]
 
 controllers = [
@@ -8,6 +9,7 @@ controllers = [
   'repositories/list'
   'repositories/show'
   'repositories/new'
+  'commits/list'
   'settings/edit'
   'tasks/list'
 ]

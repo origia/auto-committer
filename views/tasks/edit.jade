@@ -1,45 +1,39 @@
-block content
-  include ../common/manage_header
+include type_header_p
 
-  main#main.main
-    include ../commits/list_header
-
-    include type_header_p
-
-    main.tasks
-      section.task-list
-        .task(
-          ng-repeat="task in tasks|orderBy:'createdAt'"
-          ng-class="{selected: currentTask != null && currentTask._id == task._id}"
-          ng-click="trySelectTask(task, $event)"
+main.tasks
+  section.task-list
+    .task(
+      ng-repeat="task in getTasks(tasksType)|orderBy:'createdAt'"
+      ng-class="{selected: currentTask != null && currentTask._id == task._id}"
+      ng-click="trySelectTask(task, $event)"
+    )
+      input(type="checkbox" ng-click="updateTaskProgress($event, task, 100, true)" ng-model="task.done")
+      h3 {{task.content}}
+      .task-delete(ng-click="tryRemoveTask($event, task)")
+    .task-input
+      input(type="text"
+            placeholder="タスク..."
+            ng-keypress="trySubmit($event)"
+            ng-model="newTaskText"
+      )
+    a.task-add(ng-click="saveTask()")
+      h3 + タスクを追加
+  div(ng-switch="currentTask")
+    section.task-detail.unselected(ng-switch-when="null")
+      p
+        | タスクをクリックして
+        br
+        | 詳細を表示
+    section.task-detail.selected(ng-switch-default)
+      h1.task-title {{currentTask.content}}
+      h2.task-check 進捗
+      .task-progress
+        input#todoProgress(
+          type="range"
+          ng-model="currentTask.progress"
+          ng-mouseup="updateTaskProgress($event, currentTask, currentTask.progress, false)"
         )
-          input(type="checkbox" ng-click="updateTaskProgress($event, task, 100, true)" ng-model="task.done")
-          h3 {{task.content}}
-          .task-delete(ng-click="tryRemoveTask($event, task)")
-        .task-input
-          input(type="text"
-                placeholder="タスク..."
-                ng-keypress="trySubmit($event)"
-                ng-model="newTaskText"
-          )
-        a.task-add(ng-click="saveTask()")
-          h3 + タスクを追加
-      div(ng-switch="currentTask")
-        section.task-detail.unselected(ng-switch-when="null")
-          p
-            | タスクをクリックして
-            br
-            | 詳細を表示
-        section.task-detail.selected(ng-switch-default)
-          h1.task-title {{currentTask.content}}
-          h2.task-check 進捗
-          .task-progress
-            input#todoProgress(
-              type="range"
-              ng-model="currentTask.progress"
-              ng-mouseup="updateTaskProgress($event, currentTask, currentTask.progress, false)"
-            )
-            p#showRangeArea {{currentTask.progress}}%
-          h2.task-check メモ
-          textarea.task-memo(ng-blur="saveMemo()" ng-model="$parent.memoText")
-          .close(ng-click="unselectTask()")
+        p#showRangeArea {{currentTask.progress}}%
+      h2.task-check メモ
+      textarea.task-memo(ng-blur="saveMemo()" ng-model="$parent.memoText")
+      .close(ng-click="unselectTask()")

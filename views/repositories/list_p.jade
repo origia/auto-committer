@@ -1,5 +1,5 @@
 .repositories
-  a.rep(href="#/repositories/{{repository._id}}" ng-repeat="repository in repos")
+  a.rep(ui-sref="repository.commits({id: repository._id})" ng-repeat="repository in repos")
     .title
       h2= "{{repository.title}}"
     .metadata

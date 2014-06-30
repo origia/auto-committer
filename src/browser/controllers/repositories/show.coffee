@@ -4,9 +4,20 @@ Repository = require('git-cli').Repository
 db         = require '../../../configuration/database'
 
 
-repoShowCtrl = ($scope, $routeParams) ->
+repoShowCtrl = ($scope, $stateParams, repository, tasks) ->
+  $scope.repoInfo = repository.info
+  $scope.repo = repository.obj
+  $scope.tasks = tasks
+
   $scope.nextTask = null
-  $scope.page = 'commits-list'
+
+  $scope.getTasks = (type='all') ->
+    switch type
+      when 'all' then $scope.tasks.done.concat $scope.tasks.pending
+      else $scope.tasks[type]
+
+  $scope.setPage = (page) ->
+    $scope.page = page
 
   $scope.openText = switch process.platform
     when 'darwin' then 'Open in finder'
@@ -16,38 +27,13 @@ repoShowCtrl = ($scope, $routeParams) ->
     # FIXME: hard coding
     email == 'auto.committer@gmail.com'
 
-  updateNextTask = ->
-    n = $scope.pendingTasks.length
-    return $scope.nextTask = null if n == 0
-    taskIndex = Math.floor(Math.random() * n)
-    $scope.nextTask = $scope.pendingTasks[taskIndex]
-    taskValue = Math.round((100 - $scope.nextTask.progress) / $scope.tasks.length)
-    $scope.nextProgress = Math.min($scope.repoInfo.progress + taskValue, 100)
-
-  loadTasks = ->
-    db.tasks.find { repository_id: $scope.repoInfo._id }, (err, docs) ->
-      $scope.$apply ->
-        $scope.tasks = docs
-        [$scope.doneTasks, $scope.pendingTasks] = _.partition($scope.tasks, (t) -> (t.done))
-        updateNextTask()
-
-  loadLogs = ->
-    $scope.repo.log
-      onSuccess: (commits) ->
-        $scope.$apply ->
-          $scope.commits = commits
-
-  loadRepository = ->
-    db.repositories.findOne {_id: $routeParams.id }, (err, doc) ->
-      $scope.$apply ->
-        $scope.repoInfo = doc
-        $scope.repo = new Repository($scope.repoInfo.path + '/.git')
-        loadTasks()
-        loadLogs()
+  $scope.updateTasks = ->
+    [$scope.doneTasks, $scope.pendingTasks] = _.partition($scope.allTasks, (t) -> (t.done))
 
 
-  loadRepository()
+  $scope.updateTasks()
+
 
 angular.module('GitodoApp').controller 'RepoShowCtrl', [
-  '$scope', '$routeParams', repoShowCtrl
+  '$scope', '$stateParams', 'repository', 'tasks', repoShowCtrl
 ]

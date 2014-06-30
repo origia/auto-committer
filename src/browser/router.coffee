@@ -1,21 +1,40 @@
-router = ($routeProvider) ->
-  $routeProvider
-    .when '/repositories',
+resolvers  = require './util/resolvers'
+
+router = ($stateProvider, $urlRouterProvider) ->
+  $urlRouterProvider.otherwise '/repositories'
+
+  $stateProvider
+    .state 'repositories',
+      url: '/repositories'
       templateUrl: '../repositories/list.html'
       controller: 'RepoListCtrl'
-    .when '/repositories/:id',
+    .state 'repository',
+      url: '/repositories/:id'
       templateUrl: '../repositories/show.html'
       controller: 'RepoShowCtrl'
-    .when '/repositories/:id/tasks',
+      abstract: true
+      resolve:
+        repository: resolvers.resolveRepository
+        tasks: resolvers.resolveTasks
+    .state 'repository.commits',
+      url: ''
+      templateUrl: '../commits/list.html'
+      controller: 'CommitListCtrl'
+      resolve:
+        commits: resolvers.resolveCommits
+        next: resolvers.resolveNextTask
+    .state 'repository.tasks',
+      url: '/tasks'
       templateUrl: '../tasks/edit.html'
       controller: 'TaskListCtrl'
-    .when '/settings',
+    .state 'settings',
+      url: '/settings'
       templateUrl: '../settings/edit.html'
       controller: 'SettingsEditCtrl'
-    .when '/create-repo',
+    .state 'create-repo',
+      url: '/create-repo',
       templateUrl: '../repositories/new.html'
       controller: 'RepoNewCtrl'
-    .otherwise
-      redirectTo: '/repositories'
 
-angular.module('GitodoApp').config ['$routeProvider', router]
+
+angular.module('GitodoApp').config ['$stateProvider', '$urlRouterProvider', router]

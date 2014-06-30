@@ -1,0 +1,11 @@
+.story-tree
+  .commit(
+    ng-repeat="commit in commits",
+    ng-class="{auto: isAuto(commit.email)}"
+  )
+    .date
+      p {{commit.date|date:'yyyy/MM/dd hh:mm'}}
+    .user
+      img(gravatar-src-once="commit.email" alt="{{commit.author}}" title="{{commit.author}}")
+    .comment
+      p {{commit.subject}}
