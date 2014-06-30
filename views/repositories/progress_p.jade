@@ -13,4 +13,4 @@
       span {{next.progress}}%
 
   .open
-    button(ng-click="openDir(repository.path)") {{openText}}
+    button(ng-click="openDir(repository.workingDir())") {{openText}}
