@@ -19,8 +19,8 @@ repoShowCtrl = ($scope, $stateParams, repository, tasks) ->
     $scope.page = page
 
   $scope.openText = switch process.platform
-    when 'darwin' then 'Open in finder'
-    else 'Open directory'
+    when 'darwin' then 'このプロジェクトをFinderで開く'
+    else 'このプロジェクトをExplorerで開く'
 
   isAuto = (email) ->
     # FIXME: hard coding
