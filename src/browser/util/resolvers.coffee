@@ -25,6 +25,8 @@ exports.resolveCommits = (repository, $q) ->
   repository.log
     onSuccess: (commits) ->
       deferred.resolve commits
+    onError:
+      deferred.resolve []
   deferred.promise
 
 exports.resolveNextTask = (tasks, repository) ->
