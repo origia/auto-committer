@@ -12,4 +12,4 @@
       | を完了すると……
       span {{next.progress}}%
   .option
-    p.open-finder(ng-click="openDir(repository.workingDir())") このプロジェクトをFinderで開く
+    p.open-finder(ng-click="openDir(repository.workingDir())") {{openText}}
